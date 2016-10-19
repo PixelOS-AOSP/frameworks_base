@@ -1897,6 +1897,11 @@ public class NotificationManagerService extends SystemService {
                 }
             }
         }
+
+        @Override
+        public long getNotificationSoundTimeout(String pkg, int uid) {
+            return mPreferencesHelper.getNotificationSoundTimeout(pkg, uid);
+        }
     };
 
     @VisibleForTesting
@@ -4004,6 +4009,19 @@ public class NotificationManagerService extends SystemService {
 
             // Outstanding notifications from this package will be cancelled as soon as we get the
             // callback from AppOpsManager.
+        }
+
+        @Override
+        public void setNotificationSoundTimeout(String pkg, int uid, long timeout) {
+            checkCallerIsSystem();
+            mPreferencesHelper.setNotificationSoundTimeout(pkg, uid, timeout);
+            handleSavePolicyFile();
+        }
+
+        @Override
+        public long getNotificationSoundTimeout(String pkg, int uid) {
+            checkCallerIsSystem();
+            return mPreferencesHelper.getNotificationSoundTimeout(pkg, uid);
         }
 
         /**
