@@ -45,6 +45,7 @@ public class NavigationHandle extends View implements ButtonInterface {
     private final float mAdditionalWidthForAnimation;
     private final float mAdditionalHeightForAnimation;
     private final float mShrinkWidthForAnimation;
+    private float mVerticalShift;
     private boolean mRequiresInvalidate;
     private boolean mShrink;
 
@@ -118,7 +119,7 @@ public class NavigationHandle extends View implements ButtonInterface {
         float height = mRadius * 2 + additionalHeight;
         float width = getWidth() + additionalWidth;
         float x = -additionalWidth;
-        float y = navHeight - mBottom - height + (additionalHeight / 2);
+        float y = navHeight - mBottom - height + (additionalHeight / 2) + mVerticalShift;
         float adjustedRadius = height / 2;
         canvas.drawRoundRect(x, y, width, y + height, adjustedRadius, adjustedRadius, mPaint);
     }
@@ -191,5 +192,10 @@ public class NavigationHandle extends View implements ButtonInterface {
 
     private float getPulseAnimationProgress() {
         return mPulseAnimationProgress;
+    }
+
+    public void shiftHandle(int verticalShift) {
+        mVerticalShift = verticalShift;
+        invalidate();
     }
 }

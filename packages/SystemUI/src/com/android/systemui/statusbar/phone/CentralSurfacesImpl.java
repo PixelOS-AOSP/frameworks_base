@@ -215,6 +215,7 @@ import com.android.systemui.statusbar.notification.stack.NotificationStackScroll
 import com.android.systemui.statusbar.phone.dagger.StatusBarPhoneModule;
 import com.android.systemui.statusbar.policy.BatteryController;
 import com.android.systemui.statusbar.policy.BrightnessMirrorController;
+import com.android.systemui.statusbar.policy.BurnInProtectionController;
 import com.android.systemui.statusbar.policy.ConfigurationController;
 import com.android.systemui.statusbar.policy.ConfigurationController.ConfigurationListener;
 import com.android.systemui.statusbar.policy.DeviceProvisionedController;
@@ -383,6 +384,7 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
     private final AutoHideController mAutoHideController;
 
     private final Point mCurrentDisplaySize = new Point();
+    private BurnInProtectionController mBurnInProtectionController;
 
     protected PhoneStatusBarView mStatusBarView;
     private PhoneStatusBarViewController mPhoneStatusBarViewController;
@@ -707,7 +709,8 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
             UserTracker userTracker,
             Provider<FingerprintManager> fingerprintManager,
             ActivityStarter activityStarter,
-            SceneContainerFlags sceneContainerFlags
+            SceneContainerFlags sceneContainerFlags,
+            BurnInProtectionController burnInProtectionController
     ) {
         mContext = context;
         mNotificationsController = notificationsController;
@@ -819,6 +822,8 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
                 mShadeExpansionStateManager.addExpansionListener(shadeExpansionListener);
         shadeExpansionListener.onPanelExpansionChanged(currentState);
 
+        mBurnInProtectionController = burnInProtectionController;
+
         mActivityIntentHelper = new ActivityIntentHelper(mContext);
         mActivityLaunchAnimator = activityLaunchAnimator;
 
@@ -844,6 +849,8 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
         if (mFeatureFlags.isEnabled(Flags.WM_ENABLE_PREDICTIVE_BACK_SYSUI)) {
             mContext.getApplicationInfo().setEnableOnBackInvokedCallback(true);
         }
+
+        mBurnInProtectionController.setStatusBar(this);
     }
 
     private void initBubbles(Bubbles bubbles) {
@@ -1186,6 +1193,7 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
                     mShadeSurface.updateExpansionAndVisibility();
                     setBouncerShowingForStatusBarComponents(mBouncerShowing);
                     checkBarModes();
+                    mBurnInProtectionController.setPhoneStatusBarView(mStatusBarView);
                 });
         mStatusBarInitializer.initializeStatusBar();
 
@@ -2459,6 +2467,10 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
 
             updateNotificationPanelTouchState();
             getNotificationShadeWindowViewController().cancelCurrentTouch();
+
+            if (mBurnInProtectionController != null) {
+                mBurnInProtectionController.stopShiftTimer();
+            }
             if (mLaunchCameraOnFinishedGoingToSleep) {
                 mLaunchCameraOnFinishedGoingToSleep = false;
 
@@ -2624,6 +2636,9 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces {
                 }
             }
             updateScrimController();
+            if (mBurnInProtectionController != null) {
+                mBurnInProtectionController.startShiftTimer();
+            }
         }
     };
 
