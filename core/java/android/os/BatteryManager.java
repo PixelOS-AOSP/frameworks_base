@@ -281,6 +281,12 @@ public class BatteryManager {
     @SystemApi
     public static final String EXTRA_EVENT_TIMESTAMP = "android.os.extra.EVENT_TIMESTAMP";
 
+    /**
+     * boolean value to indicate OEM fast charging
+     * {@hide}
+     */
+    public static final String EXTRA_OEM_FAST_CHARGING = "oem_fast_charging";
+
     // values for "status" field in the ACTION_BATTERY_CHANGED Intent
     public static final int BATTERY_STATUS_UNKNOWN = Constants.BATTERY_STATUS_UNKNOWN;
     public static final int BATTERY_STATUS_CHARGING = Constants.BATTERY_STATUS_CHARGING;
