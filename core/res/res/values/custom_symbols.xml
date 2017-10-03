@@ -5,6 +5,10 @@
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <java-symbol type="bool" name="config_cleanupUnusedFingerprints" />
 
+    <!-- Status bar DT2S gesture -->
+    <java-symbol type="bool" name="config_dt2sGestureAvailable" />
+    <java-symbol type="bool" name="config_dt2sGestureEnabledByDefault" />
+
     <!-- Should we listen for fingerprints when the screen is off?  Devices
          with a rear-mounted sensor want this, but certain devices have
          the sensor embedded in the power key and listening all the time
