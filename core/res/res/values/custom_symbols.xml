@@ -67,4 +67,8 @@
     <java-symbol type="array" name="config_displayModeMappings" />
     <java-symbol type="bool" name="config_defaultAntiFlicker" />
 
+    <!-- Device keyhandlers -->
+    <java-symbol type="array" name="config_deviceKeyHandlerLibs" />
+    <java-symbol type="array" name="config_deviceKeyHandlerClasses" />
+
 </resources>
