@@ -129,4 +129,7 @@
     <string-array name="device_configs_override" translatable="false">
     </string-array>
 
+    <!-- Whether device has an alert slider. -->
+    <bool name="config_hasAlertSlider">false</bool>
+
 </resources>
