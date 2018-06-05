@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2024 The Android Open Source Project
+<!--
+     Copyright (C) 2020-2024 PixelOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
 
      Unless required by applicable law or agreed to in writing, software
@@ -13,7 +13,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <resources>
-    <dimen name="settingslib_status_banner_icon_frame_size">68dp</dimen>
+
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">Copy crash log URL</string>
+    <string name="url_copy_success">URL copied successfully</string>
+    <string name="url_copy_failed">An error occured while uploading the log to Memochō</string>
+
 </resources>
