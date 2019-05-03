@@ -44,6 +44,13 @@ public final class LineageContextConstants {
     public static final String LINEAGE_HARDWARE_SERVICE = "lineagehardware";
 
     /**
+     * Manages display color adjustments
+     *
+     * @hide
+     */
+    public static final String LINEAGE_LIVEDISPLAY_SERVICE = "lineagelivedisplay";
+
+    /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link lineageos.health.HealthInterface} to access the Health interface.
      *
