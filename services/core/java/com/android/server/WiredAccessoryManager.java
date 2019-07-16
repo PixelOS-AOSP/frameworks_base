@@ -87,6 +87,7 @@ final class WiredAccessoryManager implements WiredAccessoryCallbacks {
     private final AudioManager mAudioManager;
 
     private int mHeadsetState;
+    private int mDpCount;
 
     private int mSwitchValues;
 
@@ -210,6 +211,9 @@ final class WiredAccessoryManager implements WiredAccessoryCallbacks {
      * results in support for the last one plugged in. Similarly, unplugging either is seen as
      * unplugging all.
      *
+     * For Display port allow up to two connections.
+     * Block display port request if HDMI already connected and vice versa.
+     *
      * @param newName  One of the NAME_xxx variables defined above.
      * @param newState 0 or one of the BIT_xxx variables defined above.
      * @param isSynchronous boolean to determine whether should happen sync or async
@@ -218,19 +222,23 @@ final class WiredAccessoryManager implements WiredAccessoryCallbacks {
              boolean isSynchronous) {
         // Retain only relevant bits
         int headsetState = newState & SUPPORTED_HEADSETS;
+        int newDpState = newState & BIT_HDMI_AUDIO;
         int usb_headset_anlg = headsetState & BIT_USB_HEADSET_ANLG;
         int usb_headset_dgtl = headsetState & BIT_USB_HEADSET_DGTL;
         int h2w_headset = headsetState & (BIT_HEADSET | BIT_HEADSET_NO_MIC | BIT_LINEOUT);
         boolean h2wStateChange = true;
         boolean usbStateChange = true;
+        boolean dpBitState = (mHeadsetState & BIT_HDMI_AUDIO) > 0;
+        boolean dpCountState = mDpCount != 0;
         if (LOG) {
             Slog.v(TAG, "newName=" + newName
                     + " newState=" + newState
                     + " headsetState=" + headsetState
-                    + " prev headsetState=" + mHeadsetState);
+                    + " prev headsetState=" + mHeadsetState
+                    + " num of active dp conns= " + mDpCount);
         }
 
-        if (mHeadsetState == headsetState) {
+        if (mHeadsetState == headsetState && !newName.startsWith(NAME_DP_AUDIO)) {
             Log.e(TAG, "No state change.");
             return;
         }
@@ -259,8 +267,24 @@ final class WiredAccessoryManager implements WiredAccessoryCallbacks {
             mWakeLock.acquire();
             Log.i(TAG, "MSG_NEW_DEVICE_STATE");
             // Send a combined name, address string separated by |
-            Message msg = mHandler.obtainMessage(MSG_NEW_DEVICE_STATE, headsetState,
-                    mHeadsetState, newName + "/" + address);
+            Message msg;
+             if (newName.startsWith(NAME_DP_AUDIO)) {
+                 int pseudoHeadsetState = mHeadsetState;
+                 if (dpBitState && (newDpState != 0)) {
+                     // One DP already connected, so allow request to connect second.
+                     pseudoHeadsetState = mHeadsetState & (~BIT_HDMI_AUDIO);
+                 }
+                 msg = mHandler.obtainMessage(MSG_NEW_DEVICE_STATE, headsetState,
+                         pseudoHeadsetState, NAME_DP_AUDIO + "/" + address);
+ 
+                 if ((headsetState == 0) && (mDpCount != 0)) {
+                     // Atleast one DP is connected, so keep mHeadsetState's DP bit set.
+                     headsetState = headsetState | BIT_HDMI_AUDIO;
+                 }
+             } else {
+                 msg = mHandler.obtainMessage(MSG_NEW_DEVICE_STATE, headsetState,
+                         mHeadsetState, newName + "/" + address);
+             }
             mHandler.sendMessage(msg);
         }
 
@@ -570,7 +594,7 @@ final class WiredAccessoryManager implements WiredAccessoryCallbacks {
                         assert(idx2 != -1);
                         int dev = Integer.parseInt(mDevName.substring(idx + 1, idx2));
                         int cable = Integer.parseInt(mDevName.substring(idx2 + 1));
-                        mDevAddress = "controller=" + dev + ";stream=" + cable;
+                        mDevAddress = "controller=" + cable + ";stream=" + dev;
                         if (LOG) {
                             Slog.v(TAG, "UEvent dev address " + mDevAddress);
                         }
