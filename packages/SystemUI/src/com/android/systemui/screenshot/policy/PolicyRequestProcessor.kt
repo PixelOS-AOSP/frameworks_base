@@ -203,7 +203,6 @@ class PolicyRequestProcessor(
         Log.i(TAG, "Capturing screenshot: $componentName / $owner")
         val screenshot = captureDisplay(displayId) ?: error("Failed to capture screenshot")
         return original.copy(
-            type = TAKE_SCREENSHOT_FULLSCREEN,
             bitmap = screenshot,
             userHandle = owner,
             topComponent = componentName,
