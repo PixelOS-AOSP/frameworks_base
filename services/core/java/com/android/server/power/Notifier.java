@@ -1104,8 +1104,11 @@ public class Notifier {
             final String soundPath = Settings.Global.getString(mContext.getContentResolver(),
                     wireless ? Settings.Global.WIRELESS_CHARGING_STARTED_SOUND
                             : Settings.Global.CHARGING_STARTED_SOUND);
-            final Uri soundUri = Uri.parse("file://" + soundPath);
+            Uri soundUri = Uri.parse(soundPath);
             if (soundUri != null) {
+                if (!soundUri.isAbsolute()) {
+                    soundUri = Uri.parse("file://" + soundPath);
+                }
                 final Ringtone sfx = RingtoneManager.getRingtone(mContext, soundUri);
                 if (sfx != null) {
                     sfx.setStreamType(AudioManager.STREAM_SYSTEM);
