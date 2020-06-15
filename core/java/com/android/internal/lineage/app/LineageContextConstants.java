@@ -33,6 +33,18 @@ public final class LineageContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link com.android.internal.lineage.LineageHardwareManager} to manage the extended
+     * hardware features of the device.
+     *
+     * @see android.content.Context#getSystemService
+     * @see com.android.internal.lineage.LineageHardwareManager
+     *
+     * @hide
+     */
+    public static final String LINEAGE_HARDWARE_SERVICE = "lineagehardware";
+
+    /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link lineageos.health.HealthInterface} to access the Health interface.
      *
      * @see android.content.Context#getSystemService
