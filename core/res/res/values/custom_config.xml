@@ -176,4 +176,6 @@
          timing(the duration which the vibrator is expected to vibrate for). -->
     <bool name="config_hasOnePlusHapticMotor">false</bool>
 
+     <!-- Whether device has fingerprint on power button -->
+     <bool name="config_powerButtonFingerprint">false</bool>
 </resources>
