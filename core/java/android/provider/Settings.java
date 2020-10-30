@@ -5606,6 +5606,22 @@ public final class Settings {
          */
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
+        /**
+         * Adaptive playback
+         * Automatically pause media when the volume is muted and
+         * will resume automatically when volume is restored.
+         *   0 = disabled
+         *   1 = enabled
+         * @hide
+         */
+        public static final String ADAPTIVE_PLAYBACK_ENABLED = "adaptive_playback_enabled";
+
+        /**
+         * Adaptive playback's timeout in ms
+         * @hide
+         */
+        public static final String ADAPTIVE_PLAYBACK_TIMEOUT = "adaptive_playback_timeout";
+
 	/**
          * Whether to play notification sound and vibration if screen is ON
          * 0 - never
