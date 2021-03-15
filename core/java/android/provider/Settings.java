@@ -4527,6 +4527,11 @@ public final class Settings {
          */
         @Readable
         public static final String PREFERRED_REFRESH_RATE = "preferred_refresh_rate";
+        /**
+         * Whether refresh rate should be switched to 60Hz on power save mode.
+         * @hide
+         */
+        public static final String LOW_POWER_REFRESH_RATE = "low_power_rr_switch";
 
         /**
          * The amount of time in milliseconds before the device goes to sleep or begins
