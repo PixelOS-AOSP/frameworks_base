@@ -107,7 +107,7 @@ public class LegacyScreenshotController implements InteractiveScreenshotHandler 
     // From WizardManagerHelper.java
     private static final String SETTINGS_SECURE_USER_SETUP_COMPLETE = "user_setup_complete";
 
-    static final int SCREENSHOT_CORNER_DEFAULT_TIMEOUT_MILLIS = 6000;
+    static final int SCREENSHOT_CORNER_DEFAULT_TIMEOUT_MILLIS = 3000;
 
     private static final VibrationEffect VIBRATION_EFFECT =
             VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK);
