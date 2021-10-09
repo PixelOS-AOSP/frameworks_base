@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   SPDX-FileCopyrightText: 2022-2024 Paranoid Android
+   SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Maximum horizontal offset of statusbar for burn-in protection -->
+    <dimen name="status_bar_offset_max_x">4dp</dimen>
+
+    <!-- Maximum vertical offset of statusbar for burn-in protection -->
+    <dimen name="status_bar_offset_max_y">4dp</dimen>
+
+</resources>
