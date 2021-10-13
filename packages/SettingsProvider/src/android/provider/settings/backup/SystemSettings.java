@@ -92,5 +92,6 @@ public class SystemSettings {
         Settings.System.COMBINED_STATUS_BAR_SIGNAL_ICONS,
         Settings.System.QS_FOOTER_DATA_USAGE,
         Settings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+        Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
     };
 }
