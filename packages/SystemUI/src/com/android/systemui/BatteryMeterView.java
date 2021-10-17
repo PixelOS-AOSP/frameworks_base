@@ -114,6 +114,7 @@ public class BatteryMeterView extends LinearLayout implements
     private boolean mCharging;
     public int mBatteryStyle = BATTERY_STYLE_PORTRAIT;
     public int mShowBatteryPercent;
+
     // Error state where we know nothing about the current battery state
     private boolean mBatteryStateUnknown;
     // Lazily-loaded since this is expected to be a rare-if-ever state
@@ -487,32 +488,6 @@ public class BatteryMeterView extends LinearLayout implements
     public void onOverlayChanged() {
         updateShowPercent();
         updateSettings();
-    }
-
-    private Drawable getUnknownStateDrawable() {
-        if (mUnknownStateDrawable == null) {
-            mUnknownStateDrawable = mContext.getDrawable(R.drawable.ic_battery_unknown);
-            mUnknownStateDrawable.setTint(mTextColor);
-        }
-
-        return mUnknownStateDrawable;
-    }
-
-    @Override
-    public void onBatteryUnknownStateChanged(boolean isUnknown) {
-        if (mBatteryStateUnknown == isUnknown) {
-            return;
-        }
-
-        mBatteryStateUnknown = isUnknown;
-
-        if (mBatteryStateUnknown) {
-            mBatteryIconView.setImageDrawable(getUnknownStateDrawable());
-        } else {
-            updateBatteryStyle();
-        }
-
-        updateShowPercent();
     }
 
     /**
