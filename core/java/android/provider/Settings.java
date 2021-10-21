@@ -6613,6 +6613,12 @@ public final class Settings {
          */
 
         /**
+         * Whether the torch launch gesture when the screen is off should be enabled.
+         * @hide
+         */
+        public static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
