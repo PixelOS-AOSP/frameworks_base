@@ -27,4 +27,7 @@
     <!-- Whether to spoof device as pixel for certain google apps, to
          unlock pixel-exclusive features -->
     <bool name="config_spoofGoogleApps">true</bool>
+
+    <!-- Whether devices suports in-display fingerprint when screen is off -->
+    <bool name="config_supportsScreenOffUdfps">false</bool>
 </resources>
