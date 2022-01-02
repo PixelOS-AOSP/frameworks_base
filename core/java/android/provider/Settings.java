@@ -5451,6 +5451,12 @@ public final class Settings {
          */
         public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
 
+        /**
+         * Whether to force small clock on keyguard
+         * @hide
+         */
+        public static final String LOCKSCREEN_SMALL_CLOCK = "lockscreen_small_clock";
+
        /**
          * These are all public system settings
          *

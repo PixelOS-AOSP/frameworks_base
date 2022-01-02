@@ -88,5 +88,6 @@ public class SystemSettings {
         Settings.System.VIBRATE_ON_CALLWAITING,
         Settings.System.VIBRATE_ON_DISCONNECT,
         Settings.System.SKIP_FP_UNLOCK_ANIMATION,
+        Settings.System.LOCKSCREEN_SMALL_CLOCK,
     };
 }
