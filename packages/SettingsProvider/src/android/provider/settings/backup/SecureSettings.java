@@ -204,5 +204,6 @@ public class SecureSettings {
         Settings.Secure.LOCKSCREEN_SHOW_WALLET,
         Settings.Secure.LOCK_SCREEN_SHOW_QR_CODE_SCANNER,
         Settings.Secure.LOCKSCREEN_USE_DOUBLE_LINE_CLOCK,
+        Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
     };
 }
