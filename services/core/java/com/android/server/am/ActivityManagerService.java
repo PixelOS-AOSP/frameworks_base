@@ -19235,6 +19235,10 @@ public class ActivityManagerService extends IActivityManager.Stub
         mOomAdjuster.mCachedAppOptimizer.binderError(debugPid, app, code, flags, err);
     }
 
+    public boolean shouldForceCutoutFullscreen(String packageName) {
+        return mActivityTaskManager.shouldForceCutoutFullscreen(packageName);
+    }
+
     @GuardedBy("this")
     void enqueuePendingTopAppIfNecessaryLocked() {
         mPendingStartActivityUids.enqueuePendingTopAppIfNecessaryLocked(this);
