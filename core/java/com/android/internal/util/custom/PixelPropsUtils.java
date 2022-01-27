@@ -72,7 +72,8 @@ public class PixelPropsUtils {
         "com.google.android.MTCL83",
         "com.google.android.UltraCVM",
         "com.google.android.apps.cameralite",
-        "com.google.android.apps.wearables.maestro.companion"
+        "com.google.android.apps.wearables.maestro.companion",
+        "com.google.ar.core"
     };
 
     // Codenames for currently supported Pixels by Google
