@@ -62,4 +62,9 @@
          0: Left side
          1: Right side -->
     <integer name="config_alertSliderLocation">0</integer>
+
+    <!-- Array containing custom error messages from vendor. -->
+    <string-array name="face_error_vendor" translatable="false">
+        <item>@string/face_unlock_disabled_idle</item>
+    </string-array>
 </resources>
