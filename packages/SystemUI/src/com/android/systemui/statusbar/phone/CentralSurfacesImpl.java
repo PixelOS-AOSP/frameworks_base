@@ -1656,7 +1656,7 @@ public class CentralSurfacesImpl extends CoreStartable implements
                 && !mDozing
                 && !ONLY_CORE_APPS;
         mNotificationPanelViewController.setQsExpansionEnabledPolicy(expandEnabled);
-        Log.d(TAG, "updateQsExpansionEnabled - QS Expand enabled: " + expandEnabled);
+        if (DEBUG) Log.d(TAG, "updateQsExpansionEnabled - QS Expand enabled: " + expandEnabled);
     }
 
     @Override
