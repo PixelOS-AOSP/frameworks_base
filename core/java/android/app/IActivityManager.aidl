@@ -972,6 +972,11 @@ interface IActivityManager {
     boolean isSwipeToScreenshotGestureActive();
 
     /**
+     * Set whether three fingers to screen shot is active.
+     */
+    void setSwipeToScreenshotGestureActive(boolean enabled);
+
+    /**
      * Notify AMS about binder transactions to frozen apps.
      *
      * @param debugPid The binder transaction sender

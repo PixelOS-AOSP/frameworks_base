@@ -16,7 +16,9 @@
 
 package com.android.server.policy;
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.provider.Settings;
 import android.util.Log;
@@ -105,12 +107,12 @@ public class SwipeToScreenshotListener implements PointerEventListener {
     private void changeThreeGestureState(int state) {
         if (mThreeGestureState != state){
             mThreeGestureState = state;
-            boolean shouldEnableProp = mThreeGestureState == THREE_GESTURE_STATE_DETECTED_TRUE ||
+            boolean shouldEnable = mThreeGestureState == THREE_GESTURE_STATE_DETECTED_TRUE ||
                 mThreeGestureState == THREE_GESTURE_STATE_DETECTING;
             try {
-                SystemProperties.set("sys.android.screenshot", shouldEnableProp ? "true" : "false");
-            } catch(Exception e) {
-                Log.e(TAG, "Exception when setprop", e);
+                ActivityManager.getService().setSwipeToScreenshotGestureActive(shouldEnable);
+            } catch (RemoteException e) {
+                Log.e(TAG, "setSwipeToScreenshotGestureActive exception", e);
             }
         }
     }
