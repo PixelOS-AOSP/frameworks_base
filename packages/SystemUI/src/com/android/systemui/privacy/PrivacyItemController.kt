@@ -57,6 +57,14 @@ class PrivacyItemController @Inject constructor(
 
     @VisibleForTesting
     internal companion object {
+        val LOCATION_WHITELIST_PKG = arrayOf(
+            "com.android.bluetooth",
+            "com.android.networkstack.tethering",
+            "com.android.phone",
+            "com.android.systemui",
+            "com.google.android.settings.intelligence",
+            "com.mediatek.ims",
+        )
         val CAMERA_WHITELIST_PKG = arrayOf(
             "org.pixelexperience.faceunlock",
         )
@@ -150,7 +158,8 @@ class PrivacyItemController @Inject constructor(
             active: Boolean
         ) {
             // Check if we care about this code right now
-            if (code in OPS_LOCATION && !locationAvailable) {
+            if (code in OPS_LOCATION && !locationAvailable
+                    || packageName in LOCATION_WHITELIST_PKG) {
                 return
             }
             if (code in OPS_MIC_CAMERA && !micCameraAvailable
@@ -326,7 +335,8 @@ class PrivacyItemController @Inject constructor(
             AppOpsManager.OP_RECORD_AUDIO -> PrivacyType.TYPE_MICROPHONE
             else -> return null
         }
-        if (type == PrivacyType.TYPE_LOCATION && !locationAvailable) {
+        if (type == PrivacyType.TYPE_LOCATION && !locationAvailable
+                || appOpItem.packageName in LOCATION_WHITELIST_PKG) {
             return null
         }
         if (type == PrivacyType.TYPE_CAMERA && !micCameraAvailable
