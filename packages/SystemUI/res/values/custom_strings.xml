@@ -83,4 +83,7 @@
     <string name="global_action_reboot_bootloader">Bootloader</string>
     <string name="global_action_reboot_systemui">SystemUI</string>
     <string name="global_action_settings">Settings</string>
+
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Auto brightness</string>
 </resources>
