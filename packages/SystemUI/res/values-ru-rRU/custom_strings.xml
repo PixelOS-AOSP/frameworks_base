@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Screen pinning dialog description. (for devices without navbar) -->
+    <string name="screen_pinning_description_no_navbar">Он будет виден до тех пор, пока вы не открепите его. Чтобы открепить, нажмите &amp; и удерживайте \"Назад\".</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar)-->
+    <string name="screen_pinning_toast_no_navbar">Чтобы открепить этот экран, нажмите &amp; и удерживайте кнопку \"Назад\"</string>
+    <!-- Screen pinning dialog description. (for devices without navbar and with gestures on fingerprint sensor) -->
+    <string name="screen_pinning_description_no_navbar_fpsensor">Экран будет закреплён пока вы его не открепите. Нажмите &amp; и удерживайте палец на сканере отпечатка пальцев, чтобы открепить экран.</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar and with gestures on fingerprint sensor)-->
+    <string name="screen_pinning_toast_no_navbar_fpsensor">Чтобы открепить этот экран, нажмите &amp; и удерживайте сканер отпечатков пальцев</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Распознавание лица...</string>
+    <!-- Title of statusbar tuner -->
+    <string name="status_bar_icons">Значки строки состояния</string>
+    <!-- Custom QS tiles -->
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Индикация событий (doze)</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Индикация событий (doze) отключена.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Индикация событий (doze) включена.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Индикация событий (doze) отключена.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Индикация событий (doze) включена.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD выкл.\n Экономия батареи</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">Беспроводная зарядка PowerShare</string>
+    <string name="quick_settings_powershare_off_powersave_label">PowerShare выключен\n Экономия энергии</string>
+    <string name="quick_settings_powershare_off_low_battery_label">PowerShare выключен\n Низкий заряд батареи</string>
+    <string name="quick_settings_powershare_enabled_label">Беспроводная зарядка PowerShare включена</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Кофеин</string>
+    <string name="accessibility_quick_settings_caffeine_off">Кофеин отключен.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Кофеин включен.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Всплывающие уведомления</string>
+    <string name="accessibility_quick_settings_heads_up_off">Всплывающие уведомления отключены.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления включены.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления выключены.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления включены.</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Синхронизация</string>
+    <string name="accessibility_quick_settings_sync_off">Синхронизация отключена.</string>
+    <string name="accessibility_quick_settings_sync_on">Синхронизация включена.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронизация выключена.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронизация включена.</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">Режим USB-модема</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Режим чтения</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Режим чтения включен.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Режим чтения отключен.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Режим чтения включен.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Режим чтения выключен.</string>
+    <!-- Anti flicker QS tile -->
+    <string name="quick_settings_anti_flicker">Предотвращение мерцания</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Автоматическая яркость</string>
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Удалить</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Удалить скриншот</string>
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Скриншот удалён</string>
+    <!-- Power Menu -->
+    <string name="global_action_reboot">Перезагрузка</string>
+    <string name="global_action_reboot_more">Дополнительно</string>
+    <string name="global_action_reboot_sub">Система</string>
+    <string name="global_action_reboot_recovery">Режим восстановления</string>
+    <string name="global_action_reboot_bootloader">Загрузчик</string>
+    <string name="global_action_settings">Настройки</string>
+</resources>

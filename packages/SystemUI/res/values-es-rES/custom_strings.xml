@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Screen pinning dialog description. (for devices without navbar) -->
+    <string name="screen_pinning_description_no_navbar">Esto lo mantiene a la vista hasta que lo quitas. Toque y amplificador, mantén pulsado Atrás para desanclar.</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar)-->
+    <string name="screen_pinning_toast_no_navbar">Mantén pulsado el botón Atrás para dejar de fijar esta pantalla</string>
+    <!-- Screen pinning dialog description. (for devices without navbar and with gestures on fingerprint sensor) -->
+    <string name="screen_pinning_description_no_navbar_fpsensor">Esto lo mantiene a la vista hasta que lo desancles. Toque y mantenga presionado el sensor de huellas digitales para desanclar.</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar and with gestures on fingerprint sensor)-->
+    <string name="screen_pinning_toast_no_navbar_fpsensor">Para desanclar esta pantalla, mantén presionado el sensor de huellas digitales</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Reconociendo rostro...</string>
+    <!-- Title of statusbar tuner -->
+    <string name="status_bar_icons">Íconos de la barra de estado</string>
+    <!-- Custom QS tiles -->
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Pantalla ambiente</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Pantalla ambiente apagada.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Pantalla ambiente activada.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente desactivada.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente activada.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD apagado\nahorro de bateria</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">Transferencia de energía inalámbrica</string>
+    <string name="quick_settings_powershare_off_powersave_label">Transferencia de energía inalámbrica apagada\Ahorro de batería</string>
+    <string name="quick_settings_powershare_off_low_battery_label">Transferencia de energía inalámbrica apagada\Batería demasiado baja</string>
+    <string name="quick_settings_powershare_enabled_label">Transferencia de energía inalámbrica está activada</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Modo cafeína</string>
+    <string name="accessibility_quick_settings_caffeine_off">Modo Cafeína desactivado.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Modo Cafeína Activado.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Notificaciones emergentes</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notificaciones emergentes desactivadas.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notificaciones emergentes activadas.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Notificaciones emergentes desactivadas.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Notificaciones emergentes activadas.</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sincronización</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronización desactivada.</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronización activada.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sincronización desactivada.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sincronización activada.</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">Conexión USB</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Modo lectura</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Modo lectura activado.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Modo lectura desactivado.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Modo lectura activado.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Modo lectura desactivado.</string>
+    <!-- Anti flicker QS tile -->
+    <string name="quick_settings_anti_flicker">Anti parpadeo</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Brillo automático</string>
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Eliminar</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Eliminar captura</string>
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Captura de pantalla eliminada</string>
+    <!-- Power Menu -->
+    <string name="global_action_reboot">Reiniciar</string>
+    <string name="global_action_reboot_more">Avanzado</string>
+    <string name="global_action_reboot_sub">Sistema</string>
+    <string name="global_action_reboot_recovery">Recuperación</string>
+    <string name="global_action_reboot_bootloader">Gestor de arranque</string>
+    <string name="global_action_settings">Configuraciones</string>
+</resources>

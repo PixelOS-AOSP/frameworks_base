@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Screen pinning dialog description. (for devices without navbar) -->
+    <string name="screen_pinning_description_no_navbar">Ini membuatnya tetap terlihat sampai Anda melepaskan pin. Sentuh &amp; tahan tombol Kembali untuk melepaskan pin.</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar)-->
+    <string name="screen_pinning_toast_no_navbar">Untuk melepaskan sematan layar ini, sentuh &amp; tahan tombol Kembali</string>
+    <!-- Screen pinning dialog description. (for devices without navbar and with gestures on fingerprint sensor) -->
+    <string name="screen_pinning_description_no_navbar_fpsensor">Mode ini akan membuat tampilan pada layar tidak bisa diganti sampai anda melepas pin. Sentuh &amp; tahan sidik jari untuk melepas pin.</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar and with gestures on fingerprint sensor)-->
+    <string name="screen_pinning_toast_no_navbar_fpsensor">Untuk melepaskan pin pada layar ini, sentuh &amp; tahan sidik jari</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Mengenali wajah...</string>
+    <!-- Title of statusbar tuner -->
+    <string name="status_bar_icons">Ikon bilah status</string>
+    <!-- Custom QS tiles -->
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Tampilan Ambient</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Tampilan Ambient Nonaktif.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Tampilan ambient aktif.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Tampilan ambient dinonaktifkan.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Tampilan Ambien diaktifkan.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">Tampilan Selalu Nyala</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD nonaktif\nPenghemat baterai</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">PowerShare Nirkabel</string>
+    <string name="quick_settings_powershare_off_powersave_label">PowerShare Nirkabel off\nPenghemat baterai</string>
+    <string name="quick_settings_powershare_off_low_battery_label">PowerShare Nirkabel off\nBaterai terlalu rendah</string>
+    <string name="quick_settings_powershare_enabled_label">PowerShare Nirkabel diaktifkan</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Kafein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kafein mati.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kafein aktif.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Notifikasi Mengambang</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notifikasi mengambang nonaktif.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notifikasi mengambang aktif.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Notifikasi mengambang dinonaktifkan.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Notifikasi mengambang diaktifkan.</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sinkronisasi</string>
+    <string name="accessibility_quick_settings_sync_off">Sinkronisasi mati.</string>
+    <string name="accessibility_quick_settings_sync_on">Sinkronisasi hidup.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sinkronisasi dinonaktifkan.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sinkronisasi diaktifkan.</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">Tethering USB</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Mode membaca</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Mode membaca aktif.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Mode membaca nonaktif.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Mode membaca diaktifkan.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Mode membaca dinonaktifkan.</string>
+    <!-- Anti flicker QS tile -->
+    <string name="quick_settings_anti_flicker">Anti berkedip</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Kecerahan Otomatis</string>
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Hapus</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Hapus tangkapan layar</string>
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Tangkapan Layar dihapus</string>
+    <!-- Power Menu -->
+    <string name="global_action_reboot">Mulai ulang</string>
+    <string name="global_action_reboot_more">Lanjutan</string>
+    <string name="global_action_reboot_sub">Sistem</string>
+    <string name="global_action_reboot_recovery">Pemulihan</string>
+    <string name="global_action_reboot_bootloader">Bootloader</string>
+    <string name="global_action_settings">Setelan</string>
+</resources>
