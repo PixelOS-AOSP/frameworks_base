@@ -15,10 +15,10 @@
     <!-- Custom QS tiles -->
     <!-- Ambient display QS tile -->
     <string name="quick_settings_ambient_display_label">Индикация событий (doze)</string>
-    <string name="accessibility_quick_settings_ambient_display_off">Индикация событий (doze) отключена.</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Индикация событий (doze) откл.</string>
     <string name="accessibility_quick_settings_ambient_display_on">Индикация событий (doze) включена.</string>
-    <string name="accessibility_quick_settings_ambient_display_changed_off">Индикация событий (doze) отключена.</string>
-    <string name="accessibility_quick_settings_ambient_display_changed_on">Индикация событий (doze) включена.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Индикация событий (doze) откл.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Индикация событий (doze) вкл.</string>
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
     <string name="quick_settings_aod_off_powersave_label">AOD выкл.\n Экономия батареи</string>
@@ -29,28 +29,28 @@
     <string name="quick_settings_powershare_enabled_label">Беспроводная зарядка PowerShare включена</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Кофеин</string>
-    <string name="accessibility_quick_settings_caffeine_off">Кофеин отключен.</string>
-    <string name="accessibility_quick_settings_caffeine_on">Кофеин включен.</string>
+    <string name="accessibility_quick_settings_caffeine_off">Кофеин откл.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Кофеин вкл.</string>
     <!-- Heads up QS tile -->
     <string name="quick_settings_heads_up_label">Всплывающие уведомления</string>
-    <string name="accessibility_quick_settings_heads_up_off">Всплывающие уведомления отключены.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления включены.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления выключены.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления включены.</string>
+    <string name="accessibility_quick_settings_heads_up_off">Всплывающие уведомления откл.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления вкл.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления выкл.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления вкл.</string>
     <!-- Sync QS tile -->
     <string name="quick_settings_sync_label">Синхронизация</string>
-    <string name="accessibility_quick_settings_sync_off">Синхронизация отключена.</string>
-    <string name="accessibility_quick_settings_sync_on">Синхронизация включена.</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Синхронизация выключена.</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Синхронизация включена.</string>
+    <string name="accessibility_quick_settings_sync_off">Синхронизация откл.</string>
+    <string name="accessibility_quick_settings_sync_on">Синхронизация вкл.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронизация выкл.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронизация вкл.</string>
     <!-- USB tethering QS tile -->
     <string name="quick_settings_usb_tether_label">Режим USB-модема</string>
     <!-- Reader mode QS tile -->
     <string name="quick_settings_reading_mode">Режим чтения</string>
-    <string name="accessibility_quick_settings_reading_mode_on">Режим чтения включен.</string>
-    <string name="accessibility_quick_settings_reading_mode_off">Режим чтения отключен.</string>
-    <string name="accessibility_quick_settings_reading_mode_changed_on">Режим чтения включен.</string>
-    <string name="accessibility_quick_settings_reading_mode_changed_off">Режим чтения выключен.</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Режим чтения вкл.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Режим чтения откл.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Режим чтения вкл.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Режим чтения выкл.</string>
     <!-- Anti flicker QS tile -->
     <string name="quick_settings_anti_flicker">Предотвращение мерцания</string>
     <!-- Autobrightness tile -->
