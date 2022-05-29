@@ -1,0 +1,7 @@
+files:
+  - source: /core/res/res/values/custom_strings.xml
+    translation: /core/res/res/values-%android_code%/%original_file_name%
+    translate_attributes: 0
+  - source: /packages/SystemUI/res/values/custom_strings.xml
+    translation: /packages/SystemUI/res/values-%android_code%/%original_file_name%
+    translate_attributes: 0
