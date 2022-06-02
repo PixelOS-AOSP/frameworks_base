@@ -20,6 +20,9 @@
      <java-symbol type="string" name="url_copy_success" />
      <java-symbol type="string" name="url_copy_failed" />
  
+    <!-- Lock gesture -->
+    <java-symbol type="string" name="gesture_locked_warning" />
+
     <!-- Health interface -->
     <java-symbol type="bool" name="config_chargingControlEnabled" />
     <java-symbol type="bool" name="config_chargingControlToggleSetAlways" />
