@@ -79,6 +79,7 @@ import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.flags.FeatureFlags;
 import com.android.systemui.res.R;
 import com.android.systemui.screenshot.TakeScreenshotService.RequestCallback;
+import com.android.systemui.screenshot.scroll.ScrollCaptureController;
 import com.android.systemui.screenshot.scroll.ScrollCaptureExecutor;
 import com.android.systemui.util.Assert;
 
@@ -298,6 +299,12 @@ public class LegacyScreenshotController implements InteractiveScreenshotHandler 
         Assert.isMainThread();
 
         mCurrentRequestCallback = requestCallback;
+
+        if (screenshot.getType() == WindowManager.TAKE_SCREENSHOT_SELECTED_REGION) {
+            startPartialScreenshotActivity(Process.myUserHandle());
+            finisher.accept(null);
+            return;
+        }
 
         if (screenshot.getBitmap() == null) {
             Log.e(TAG, "handleScreenshot: Screenshot bitmap was null");
@@ -529,6 +536,23 @@ public class LegacyScreenshotController implements InteractiveScreenshotHandler 
                     return Unit.INSTANCE;
                 }
         );
+    }
+
+    private void startPartialScreenshotActivity(UserHandle owner) {
+        Bitmap newScreenshot = mImageCapture.captureDisplay(mDisplay.getDisplayId(),
+                getFullScreenRect());
+        ScrollCaptureController.BitmapScreenshot bitmapScreenshot =
+                new ScrollCaptureController.BitmapScreenshot(mContext, newScreenshot);
+
+        mScrollCaptureExecutor.executeBatchScrollCapture(bitmapScreenshot,
+                () -> {
+                    final Intent intent = ActionIntentCreator.INSTANCE.createLongScreenshotIntent(
+                            owner, mContext);
+                    mContext.startActivity(intent);
+                },
+                (destination, onTransitionEnd, longScreenshot) -> {
+                    onTransitionEnd.run();
+                });
     }
 
     private void onScrollButtonClicked(UserHandle owner, ScrollCaptureResponse response) {
