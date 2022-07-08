@@ -95,4 +95,6 @@
     <!-- Face Unlock -->
     <string name="face_unlock_recognizing">Recognizing face...</string>
 
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi Standard icon</string>
 </resources>

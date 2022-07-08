@@ -205,5 +205,6 @@ public class SecureSettings {
         Settings.Secure.LOCK_SCREEN_SHOW_QR_CODE_SCANNER,
         Settings.Secure.LOCKSCREEN_USE_DOUBLE_LINE_CLOCK,
         Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
+        Settings.Secure.SHOW_WIFI_STANDARD_ICON,
     };
 }
