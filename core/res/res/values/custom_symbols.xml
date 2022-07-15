@@ -123,9 +123,6 @@
     <java-symbol type="string" name="url_copy_success" />
     <java-symbol type="string" name="url_copy_failed" />
 
-    <!-- For dynamic default font styles -->
-    <java-symbol type="string" name="config_bodyFontFamily" />
-
      <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
     <java-symbol type="string" name="config_oemFastChargerStatusPath" />
 
