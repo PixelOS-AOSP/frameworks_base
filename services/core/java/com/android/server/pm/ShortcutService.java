@@ -150,6 +150,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
@@ -445,10 +447,10 @@ public class ShortcutService extends IShortcutService.Stub {
     }
 
     @GuardedBy("mLock")
-    private int mWtfCount = 0;
+    private final AtomicInteger mWtfCount = new AtomicInteger();
 
     @GuardedBy("mLock")
-    private Exception mLastWtfStacktrace;
+    private final AtomicReference<Exception> mLastWtfStacktrace = new AtomicReference<>();
 
     @GuardedBy("mLock")
     private final MetricsLogger mMetricsLogger = new MetricsLogger();
@@ -4729,11 +4731,11 @@ public class ShortcutService extends IShortcutService.Stub {
 
                 pw.println();
                 pw.print("  #Failures: ");
-                pw.println(mWtfCount);
+                pw.println(mWtfCount.get());
 
-                if (mLastWtfStacktrace != null) {
+                if (mLastWtfStacktrace.get() != null) {
                     pw.print("  Last failure stack trace: ");
-                    pw.println(Log.getStackTraceString(mLastWtfStacktrace));
+                    pw.println(Log.getStackTraceString(mLastWtfStacktrace.get()));
                 }
 
                 pw.println();
@@ -5148,10 +5150,8 @@ public class ShortcutService extends IShortcutService.Stub {
         if (e == null) {
             e = new RuntimeException("Stacktrace");
         }
-        synchronized (mLock) {
-            mWtfCount++;
-            mLastWtfStacktrace = new Exception("Last failure was logged here:");
-        }
+        mWtfCount.getAndIncrement();
+        mLastWtfStacktrace.set(new Exception("Last failure was logged here:"));
         Slog.wtf(TAG, message, e);
     }
 
