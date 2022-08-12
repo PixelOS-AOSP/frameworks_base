@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_fakePackageSignature">パッケージ署名を模倣</string>
+    <string name="permlab_fakePackageSignature">パッケージ署名の偽装</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_fakePackageSignature">アプリが別のアプリのふりをすることを許可します。悪意のあるアプリがこの機能を使ってプライベートなアプリデータにアクセスする可能性があります。正しい使い方は、エミュレーターがエミュレートする目的での使用などです。注意してこの権限を許可して下さい!</string>
+    <string name="permdesc_fakePackageSignature">アプリが別のアプリのふりをすることを許可します。悪意のあるアプリがこの機能を使ってプライベートなアプリデータにアクセスする可能性があります。この権限はエミュレーターの動作に必要となります。注意してこの権限を許可して下さい!</string>
     <!-- Title of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permgrouplab_fake_package_signature">パッケージ署名を模倣</string>
+    <string name="permgrouplab_fake_package_signature">パッケージ署名の偽装</string>
     <!-- Description of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permgroupdesc_fake_package_signature">パッケージ署名の偽装を許可</string>
     <!-- Message shown to the user when the apps requests permission from this group. If ever possible this should stay below 80 characters (assuming the parameters takes 20 characters). Don't abbreviate until the message reaches 120 characters though. [CHAR LIMIT=120] -->
     <string name="permgrouprequest_fake_package_signature">        &lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; にパッケージ署名を偽装させることを許可しますか？</string>
     <!-- LiveDisplay strings -->
     <string name="live_display_auto">自動</string>
-    <string name="live_display_auto_summary">日中に画面の色温度を自動的に調整する</string>
+    <string name="live_display_auto_summary">日没と日出に画面の色温度を自動的に調整する</string>
     <string name="live_display_off">OFF</string>
     <string name="live_display_off_summary">全ての調整を無効にする</string>
-    <string name="live_display_day">日間</string>
-    <string name="live_display_day_summary">昼設定のみ使用</string>
+    <string name="live_display_day">昼間</string>
+    <string name="live_display_day_summary">昼の設定のみを使用する</string>
     <string name="live_display_night">夜間</string>
     <string name="live_display_night_summary">夜の設定のみを使用する</string>
     <string name="live_display_outdoor">屋外 (日光)</string>
@@ -40,7 +40,7 @@
     <string name="reboot_system_title">システムの再起動</string>
     <string name="reboot_system_message">システムを再起動中\u2026</string>
     <!-- Button that copies the url to the log of a crashed application -->
-    <string name="aerr_copy">クラッシュログ URL をコピー</string>
+    <string name="aerr_copy">クラッシュログ の URL をコピー</string>
     <string name="url_copy_success">URL を正常にコピーしました</string>
-    <string name="url_copy_failed">Memochō へのログのアップロード中にエラーが発生しました</string>
+    <string name="url_copy_failed">メモ帳へのログのアップロード中にエラーが発生しました</string>
 </resources>

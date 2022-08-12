@@ -43,7 +43,7 @@
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
     <string name="screenshot_delete_description">スクリーンショットを削除</string>
     <!-- Power Menu -->
-    <string name="global_action_reboot">やり直す</string>
+    <string name="global_action_reboot">再起動</string>
     <string name="global_action_reboot_more">高度な</string>
     <string name="global_action_reboot_sub">システム</string>
     <string name="global_action_reboot_recovery">回復</string>

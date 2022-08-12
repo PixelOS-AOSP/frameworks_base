@@ -56,17 +56,17 @@
     <!-- Name of the VPN status bar icon. -->
     <string name="status_bar_vpn">VPN</string>
     <!-- DataSwitch Tile -->
-    <string name="qs_data_switch_label">Switch data card</string>
-    <string name="qs_data_switch_toast_0">Currently no SIM card is inserted</string>
-    <string name="qs_data_switch_toast_1">Currently only one SIM card is inserted</string>
+    <string name="qs_data_switch_label">스위치 데이터 카드</string>
+    <string name="qs_data_switch_toast_0">현재 SIM 카드가 삽입되어 있지 않습니다.</string>
+    <string name="qs_data_switch_toast_1">현재 하나의 SIM 카드만 삽입되어 있습니다.</string>
     <string name="qs_data_switch_text_1">SIM 1</string>
     <string name="qs_data_switch_text_2">SIM 2</string>
-    <string name="qs_data_switch_changed_1">Switched data card to SIM 1.</string>
-    <string name="qs_data_switch_changed_2">Switched data card to SIM 2.</string>
+    <string name="qs_data_switch_changed_1">데이터 카드를 SIM 1 다음으로 전환</string>
+    <string name="qs_data_switch_changed_2">데이터 카드를 SIM 2 다음으로 전환</string>
     <!-- Data usage info in QS footer -->
-    <string name="usage_data">used today</string>
-    <string name="usage_data_default_suffix">Data</string>
-    <string name="usage_wifi_default_suffix">Wi-Fi</string>
+    <string name="usage_data">사용된 오늘</string>
+    <string name="usage_data_default_suffix">데이터</string>
+    <string name="usage_wifi_default_suffix">와이파이</string>
     <!-- Old mobile type icons -->
-    <string name="use_old_mobiletype_title">Small mobile type icon</string>
+    <string name="use_old_mobiletype_title">작은 모바일 유형 아이콘</string>
 </resources>
