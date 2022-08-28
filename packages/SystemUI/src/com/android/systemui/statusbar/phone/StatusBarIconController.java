@@ -51,7 +51,6 @@ import com.android.systemui.statusbar.phone.PhoneStatusBarPolicy.BluetoothIconSt
 import com.android.systemui.statusbar.phone.StatusBarSignalPolicy.CallIndicatorIconState;
 import com.android.systemui.statusbar.phone.StatusBarSignalPolicy.MobileIconState;
 import com.android.systemui.statusbar.phone.StatusBarSignalPolicy.WifiIconState;
-import com.android.systemui.util.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,8 +69,6 @@ public interface StatusBarIconController {
     void addIconGroup(IconManager iconManager);
     /** */
     void removeIconGroup(IconManager iconManager);
-    /** Refresh the state of an IconManager by recreating the views */
-    void refreshIconGroup(IconManager iconManager);
     /** */
     void setExternalIcon(String slot);
     /** */
@@ -251,7 +248,6 @@ public interface StatusBarIconController {
         protected final int mIconSize;
         // Whether or not these icons show up in dumpsys
         protected boolean mShouldLog = false;
-        private StatusBarIconController mController;
 
         // Enables SystemUI demo mode to take effect in this group
         protected boolean mDemoable = true;
@@ -276,17 +272,13 @@ public interface StatusBarIconController {
             mDemoable = demoable;
         }
 
-        void setController(StatusBarIconController controller) {
-            mController = controller;
-        }
-
         public void setBlockList(@Nullable List<String> blockList) {
-            Assert.isMainThread();
             mBlockList.clear();
-            mBlockList.addAll(blockList);
-            if (mController != null) {
-                mController.refreshIconGroup(this);
+            if (blockList == null || blockList.isEmpty()) {
+                return;
             }
+
+            mBlockList.addAll(blockList);
         }
 
         public void setShouldLog(boolean should) {
