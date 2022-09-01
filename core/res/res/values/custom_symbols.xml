@@ -15,6 +15,11 @@
 -->
 <resources>
 
+    <!-- PropImitationHooks -->
+    <java-symbol type="array" name="config_certifiedBuildProperties" />
+    <java-symbol type="string" name="config_stockFingerprint" />
+    <java-symbol type="string" name="config_netflixSpoofModel" />
+
     <!-- App error dialog -->
      <java-symbol type="id" name="aerr_copy" />
      <java-symbol type="string" name="url_copy_success" />
