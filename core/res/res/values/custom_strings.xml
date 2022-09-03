@@ -53,4 +53,6 @@
     <string name="charging_control_notification_content_target">Battery will be fully charged at %1$s</string>
     <string name="charging_control_notification_content_target_reached">Battery is charged</string>
 
+    <!-- Cycle through ringer modes -->
+    <string name="volume_dialog_ringer_guidance_normal">Calls and notifications will ring</string>
 </resources>
