@@ -120,6 +120,7 @@ import com.android.internal.annotations.GuardedBy;
 import com.android.internal.annotations.Immutable;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.os.SomeArgs;
+import com.android.internal.util.PropImitationHooks;
 import com.android.internal.util.UserIcons;
 
 import dalvik.system.VMRuntime;
@@ -808,19 +809,8 @@ public class ApplicationPackageManager extends PackageManager {
 
     @Override
     public boolean hasSystemFeature(String name, int version) {
-        String packageName = ActivityThread.currentPackageName();
-        if (packageName != null &&
-                packageName.contains("com.google.android.apps.photos") &&
-                name.contains("PIXEL_2021_EXPERIENCE") ||
-                name.contains("PIXEL_2021_MIDYEAR_EXPERIENCE") ||
-                name.contains("PIXEL_2020_EXPERIENCE") ||
-                name.contains("PIXEL_2020_MIDYEAR_EXPERIENCE") ||
-                name.contains("PIXEL_2019_EXPERIENCE") ||
-                name.contains("PIXEL_2019_PRELOAD") ||
-                name.contains("PIXEL_2019_MIDYEAR_EXPERIENCE")) {
-            return false;
-        }
-        return mHasSystemFeatureCache.query(new HasSystemFeatureQuery(name, version));
+        return PropImitationHooks.hasSystemFeature(name,
+                mHasSystemFeatureCache.query(new HasSystemFeatureQuery(name, version)));
     }
 
     /** @hide */
