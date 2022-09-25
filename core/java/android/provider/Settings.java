@@ -6466,6 +6466,12 @@ public final class Settings {
         }
 
         /**
+         * Whether to show power menu on lockscreen
+         * @hide
+         */
+        public static final String HIDE_POWERMENU_LOCKSCREEN = "hide_powermenu_lockscreen";
+
+        /**
          * When to use Wi-Fi calling
          *
          * @see android.telephony.TelephonyManager.WifiCallingChoices
