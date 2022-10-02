@@ -23,12 +23,6 @@
     <java-symbol type="array" name="config_globallyDisabledComponents" />
     <java-symbol type="array" name="config_forceEnabledComponents" />
 
-    <!-- PropImitationHooks -->
-    <java-symbol type="string" name="config_certifiedFingerprint" />
-    <java-symbol type="string" name="config_certifiedModel" />
-    <java-symbol type="string" name="config_stockFingerprint" />
-    <java-symbol type="bool" name="config_spoofGoogleApps" />
-
     <!-- Whether devices suports in-display fingerprint when screen is off -->
     <java-symbol type="bool" name="config_supportsScreenOffUdfps" />
 
