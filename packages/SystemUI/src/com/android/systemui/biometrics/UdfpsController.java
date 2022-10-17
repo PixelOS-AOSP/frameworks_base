@@ -22,6 +22,7 @@ import static android.hardware.biometrics.BiometricOverlayConstants.REASON_AUTH_
 import static android.hardware.biometrics.BiometricFingerprintConstants.FINGERPRINT_ACQUIRED_VENDOR;
 
 import static com.android.internal.util.Preconditions.checkNotNull;
+import static com.android.systemui.classifier.Classifier.LOCK_ICON;
 import static com.android.systemui.classifier.Classifier.UDFPS_AUTHENTICATION;
 
 import android.annotation.NonNull;
@@ -181,10 +182,15 @@ public class UdfpsController implements DozeReceiver {
     private boolean mScreenOffFod;
 
     @VisibleForTesting
-    public static final VibrationAttributes VIBRATION_ATTRIBUTES =
+    public static final VibrationAttributes UDFPS_VIBRATION_ATTRIBUTES =
             new VibrationAttributes.Builder()
                     // vibration will bypass battery saver mode:
                     .setUsage(VibrationAttributes.USAGE_COMMUNICATION_REQUEST)
+                    .build();
+    @VisibleForTesting
+    public static final VibrationAttributes LOCK_ICON_VIBRATION_ATTRIBUTES =
+            new VibrationAttributes.Builder()
+                    .setUsage(VibrationAttributes.USAGE_TOUCH)
                     .build();
 
     // haptic to use for successful device entry
@@ -725,7 +731,7 @@ public class UdfpsController implements DozeReceiver {
                     mContext.getOpPackageName(),
                     EFFECT_CLICK,
                     "udfps-onStart-click",
-                    VIBRATION_ATTRIBUTES);
+                    UDFPS_VIBRATION_ATTRIBUTES);
         }
     }
 
@@ -802,7 +808,19 @@ public class UdfpsController implements DozeReceiver {
         }
 
         if (!mKeyguardUpdateMonitor.isFingerprintDetectionRunning()) {
+            if (mFalsingManager.isFalseTouch(LOCK_ICON)) {
+                Log.v(TAG, "aod lock icon long-press rejected by the falsing manager.");
+                return;
+            }
             mKeyguardViewManager.showBouncer(true);
+
+            // play the same haptic as the LockIconViewController longpress
+            mVibrator.vibrate(
+                    Process.myUid(),
+                    mContext.getOpPackageName(),
+                    UdfpsController.EFFECT_CLICK,
+                    "aod-lock-icon-longpress",
+                    LOCK_ICON_VIBRATION_ATTRIBUTES);
             return;
         }
 
@@ -895,6 +913,11 @@ public class UdfpsController implements DozeReceiver {
             mBiometricExecutor.execute(() -> {
                 mAlternateTouchProvider.onPointerDown(requestId, x, y, minor, major);
             });
+            mFgExecutor.execute(() -> {
+                if (mKeyguardUpdateMonitor.isFingerprintDetectionRunning()) {
+                    mKeyguardUpdateMonitor.onUdfpsPointerDown((int) requestId);
+                }
+            });
         } else {
             mFingerprintManager.onPointerDown(requestId, mSensorId, x, y, minor, major);
         }
@@ -910,7 +933,6 @@ public class UdfpsController implements DozeReceiver {
                 } else {
                     mFingerprintManager.onUiReady(requestId, mSensorId);
                     mLatencyTracker.onActionEnd(LatencyTracker.ACTION_UDFPS_ILLUMINATE);
-
                 }
             });
         }
@@ -928,6 +950,11 @@ public class UdfpsController implements DozeReceiver {
             if (mAlternateTouchProvider != null) {
                 mBiometricExecutor.execute(() -> {
                     mAlternateTouchProvider.onPointerUp(requestId);
+                });
+                mFgExecutor.execute(() -> {
+                    if (mKeyguardUpdateMonitor.isFingerprintDetectionRunning()) {
+                        mKeyguardUpdateMonitor.onUdfpsPointerUp((int) requestId);
+                    }
                 });
             } else {
                 mFingerprintManager.onPointerUp(requestId, mSensorId);
