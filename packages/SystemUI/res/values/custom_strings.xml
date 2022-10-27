@@ -86,4 +86,9 @@
 
     <!-- Autobrightness tile -->
     <string name="quick_settings_autobrightness_label">Auto brightness</string>
+
+    <!-- Bluetooth dialog -->
+    <string name="turn_on_bluetooth">Bluetooth</string>
+    <string name="bluetooth_is_off">Bluetooth is off</string>
+    <string name="tap_a_device_to_connect">Tap a device to connect</string>
 </resources>
