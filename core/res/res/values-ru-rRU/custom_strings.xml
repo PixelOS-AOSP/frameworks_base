@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2021, The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Автоматически</string>
+    <string name="live_display_auto_summary">Автоматическая подстройка цветовой температуры экрана после заката и рассвета</string>
+    <string name="live_display_off">Выкл</string>
+    <string name="live_display_off_summary">Отключить все улучшения</string>
+    <string name="live_display_day">День</string>
+    <string name="live_display_day_summary">Использовать только дневные настройки</string>
+    <string name="live_display_night">Ночь</string>
+    <string name="live_display_night_summary">Использовать только ночные настройки</string>
+    <string name="live_display_outdoor">На улице (яркое солнце)</string>
+    <string name="live_display_outdoor_summary">Только режим \"На улице\"</string>
+    <string name="live_display_hint">LiveDisplay помогает снизить напряжение глаз и улучшает ночной сон. Нажмите здесь, чтобы попробовать!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay выключен</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: автоматический режим</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: дневной режим</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: ночной режим</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: режим \"На улице\"</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay выключен</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay переключен в автоматический режим</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay переключен на дневной режим</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay переключен на ночной режим</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay переключен в режим «На улице»</string>
+    <!-- Global actions -->
+    <string name="reboot_to_bootloader_title">Перезагрузить в режим загрузчика</string>
+    <string name="reboot_to_bootloader_message">Перезагрузка в режим загрузчика\u2026</string>
+    <string name="reboot_to_recovery_title">Перезагрузить в режим восстановления</string>
+    <string name="reboot_to_recovery_message">Перезагрузка в режим восстановления\u2026</string>
+    <string name="reboot_system_title">Перезагрузка системы</string>
+    <string name="reboot_system_message">Перезагрузка\u2026</string>
+</resources>

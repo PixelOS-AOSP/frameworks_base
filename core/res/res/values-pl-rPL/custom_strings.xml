@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2021, The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Automatyczny</string>
+    <string name="live_display_auto_summary">Automatycznie dostosuj temperaturę kolorów ekranu po zachodzie i wschodzie słońca</string>
+    <string name="live_display_off">Wyłączone</string>
+    <string name="live_display_off_summary">Wyłącz wszystkie zmiany</string>
+    <string name="live_display_day">Dzień</string>
+    <string name="live_display_day_summary">Użyj wyłącznie ustawień dziennych</string>
+    <string name="live_display_night">Noc</string>
+    <string name="live_display_night_summary">Użyj wyłącznie ustawień nocnych</string>
+    <string name="live_display_outdoor">Na zewnątrz (jasne światło)</string>
+    <string name="live_display_outdoor_summary">Używaj ustawień tylko na zewnątrz</string>
+    <string name="live_display_hint">NaZewnątrz może zredukować zmęczenie oczu oraz może pomóc zasnąć w nocy. Kliknij aby wypróbować!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay wył.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: tryb zewnętrzny.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: tryb dzienny.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: tryb nocny.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: tryb na zewnątrz.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay wyłączony.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">Aktywny wyświetlacz został zmieniony na automatyczny</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay zmieniony na tryb dzienny.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay zmieniony na tryb nocny.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay zmieniony na tryb na zewnątrz.</string>
+    <!-- Global actions -->
+    <string name="reboot_to_bootloader_title">Uruchom ponownie w trybie Bootloader\'a</string>
+    <string name="reboot_to_bootloader_message">Restartowanie do bootloader</string>
+    <string name="reboot_to_recovery_title">Uruchom ponownie w trybie Recovery</string>
+    <string name="reboot_to_recovery_message">Ponowne uruchamianie w trybie recovery\u2026</string>
+    <string name="reboot_system_title">Uruchom ponownie</string>
+    <string name="reboot_system_message">Ponowne uruchamianie systemu...</string>
+</resources>

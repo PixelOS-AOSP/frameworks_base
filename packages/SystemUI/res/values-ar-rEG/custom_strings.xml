@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2020-2022 PixelOS
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Custom QS tiles -->
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">إضاءة الشاشة عند وصول إشعار</string>
+    <string name="accessibility_quick_settings_ambient_display_off">ايقاف وضع إضاءة الشاشة عند وصول إشعار.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">تفعيل شاشة الاشعارات.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">شاشة العرض الدائمة</string>
+    <string name="quick_settings_aod_off_powersave_label">إيقاف\n الشاشة العرض الدائمة عند تفعيل وضع توفير البطارية</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">وضع الكافيين</string>
+    <string name="accessibility_quick_settings_caffeine_off">وضع الكافيين معطل.</string>
+    <string name="accessibility_quick_settings_caffeine_on">وضع الكافيين مفعل.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">التنبيهات العلوية</string>
+    <string name="accessibility_quick_settings_heads_up_off">ايقاف التنبيهات العلوية.</string>
+    <string name="accessibility_quick_settings_heads_up_on">تشغيل التنبيهات العلوية.</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">مزامنة</string>
+    <string name="accessibility_quick_settings_sync_off">المزامنة متوقفة.</string>
+    <string name="accessibility_quick_settings_sync_on">المزامنة مفعلة.</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">‏ربط USB</string>
+    <!-- VPN QS tile -->
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">الاتصال بـ\u2026</string>
+    <string name="vpn_credentials_hint">الرجاء إدخال بيانات الاعتماد الخاصة بك للاتصال ب <xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">إسم المستخدم</string>
+    <string name="vpn_credentials_password">كلمة المرور</string>
+    <string name="vpn_credentials_dialog_connect">الاتصال</string>
+    <!-- Title of statusbar tuner -->
+    <string name="status_bar_icons">أيقونات شريط الحالة</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">مؤشر التجوال</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">موفر البيانات</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">وضع القراءة</string>
+    <string name="accessibility_quick_settings_reading_mode_on">تشغيل وضع القراءة.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">إيقاف وضع القراءة.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">تم تشغيل وضع القراءة.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">تم إيقاف وضع القراءة.</string>
+    <!-- Anti flicker QS tile -->
+    <string name="quick_settings_anti_flicker">مانع التردد</string>
+    <!-- Power Menu -->
+    <string name="global_action_reboot">إعادة التشغيل</string>
+    <string name="global_action_reboot_more">متقدم</string>
+    <string name="global_action_reboot_sub">النظام</string>
+    <string name="global_action_reboot_recovery">الاسترداد</string>
+    <string name="global_action_reboot_bootloader">بوتلودر</string>
+    <string name="global_action_reboot_systemui">واجهة المستخدم</string>
+    <string name="global_action_settings">الإعدادات</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">السطوع التلقائي</string>
+    <!-- Bluetooth dialog -->
+    <string name="turn_on_bluetooth">بلوتوث</string>
+    <string name="bluetooth_is_off">البلوتوث غير مفعل</string>
+    <string name="tap_a_device_to_connect">انقر على جهاز للاتصال</string>
+</resources>

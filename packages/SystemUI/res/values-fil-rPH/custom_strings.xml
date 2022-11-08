@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2020-2022 PixelOS
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Custom QS tiles -->
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Ambient display</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Patayin ang Ambient Display.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Buhayin ang Ambient Display.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Caffeine</string>
+    <string name="accessibility_quick_settings_caffeine_off">Patayin ang Caffeine.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Buksan ang Caffeine.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Heads up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Patayin ang Heads up.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Buksan ang Heads up.</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sync</string>
+    <string name="accessibility_quick_settings_sync_off">Patay ang Sync.</string>
+    <string name="accessibility_quick_settings_sync_on">Bukas ang Sync.</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <!-- VPN QS tile -->
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Kumonekta kay\u2026</string>
+    <string name="vpn_credentials_hint">Pakilagyan ng iyong detalye para kumonekta kay <xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">Username</string>
+    <string name="vpn_credentials_password">Password</string>
+    <string name="vpn_credentials_dialog_connect">Kumonekta</string>
+    <!-- Title of statusbar tuner -->
+    <string name="status_bar_icons">Mga icons sa Status Bar</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">Roaming Indicator</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">Data saver</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Reading mode</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Buhayin ang Reading mode.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Patayin ang Reading mode.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Buhay ang Reading mode.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Patay ang Reading mode.</string>
+    <!-- Anti flicker QS tile -->
+    <string name="quick_settings_anti_flicker">Iwasan ang pumipitik na screen</string>
+    <!-- Power Menu -->
+    <string name="global_action_reboot">Restart</string>
+    <string name="global_action_reboot_more">Advanced</string>
+    <string name="global_action_reboot_sub">System</string>
+    <string name="global_action_reboot_recovery">Recovery</string>
+    <string name="global_action_reboot_bootloader">Bootloader</string>
+    <string name="global_action_reboot_systemui">SystemUI</string>
+    <string name="global_action_settings">Settings</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Awtomatik na liwanag</string>
+    <!-- Bluetooth dialog -->
+    <string name="turn_on_bluetooth">Bluetooth</string>
+    <string name="bluetooth_is_off">Bluetooth is off</string>
+    <string name="tap_a_device_to_connect">Tap a device to connect</string>
+</resources>

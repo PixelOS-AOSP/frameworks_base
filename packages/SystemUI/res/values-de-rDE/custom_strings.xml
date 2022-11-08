@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2020-2022 PixelOS
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Custom QS tiles -->
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Ambient Mode</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Ambiente Mode aus.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambiente Mode an.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">Always-On-Display</string>
+    <string name="quick_settings_aod_off_powersave_label">Always-On-Display aus\nEnergiesparmodus</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Koffein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Koffein aus.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Koffein an.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Pop-Up-Benachrichtigungen</string>
+    <string name="accessibility_quick_settings_heads_up_off">Pop-up-Benachrichtigungen aus.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Pop-up-Benachrichtigungen an.</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sync</string>
+    <string name="accessibility_quick_settings_sync_off">Sync aus.</string>
+    <string name="accessibility_quick_settings_sync_on">Sync an.</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB Tethering</string>
+    <!-- VPN QS tile -->
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Verbinden mit\u2026</string>
+    <string name="vpn_credentials_hint">Bitte Zugangsdaten eingeben, um sich mit <xliff:g id="name">%s</xliff:g> zu verbinden</string>
+    <string name="vpn_credentials_username">Benutzername</string>
+    <string name="vpn_credentials_password">Passwort</string>
+    <string name="vpn_credentials_dialog_connect">Verbinden</string>
+    <!-- Title of statusbar tuner -->
+    <string name="status_bar_icons">Statusbar-Symbole</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">Roaming indicator</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">Datensparmodus</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Lesemodus</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Lesemodus an.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Lesemodus aus.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Lesemodus eingeschaltet.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Lesemodus ausgeschaltet.</string>
+    <!-- Anti flicker QS tile -->
+    <string name="quick_settings_anti_flicker">Anti-Flimmer</string>
+    <!-- Power Menu -->
+    <string name="global_action_reboot">Neustart</string>
+    <string name="global_action_reboot_more">Erweitert</string>
+    <string name="global_action_reboot_sub">System</string>
+    <string name="global_action_reboot_recovery">Recovery</string>
+    <string name="global_action_reboot_bootloader">Bootloader</string>
+    <string name="global_action_reboot_systemui">SystemUI</string>
+    <string name="global_action_settings">Einstellungen</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Automatische Helligkeit</string>
+    <!-- Bluetooth dialog -->
+    <string name="turn_on_bluetooth">Bluetooth</string>
+    <string name="bluetooth_is_off">Bluetooth ist deaktiviert</string>
+    <string name="tap_a_device_to_connect">Gerät wählen mit dem eine Verbindung hersgestellt werden soll</string>
+</resources>

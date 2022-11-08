@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2021, The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Automatisch</string>
+    <string name="live_display_auto_summary">Farbtemperatur des Bildschirms nach Sonnenaufgang und Sonnenuntergang automatisch anpassen</string>
+    <string name="live_display_off">Aus</string>
+    <string name="live_display_off_summary">Alle Anpassungen deaktivieren</string>
+    <string name="live_display_day">Tag</string>
+    <string name="live_display_day_summary">Nur Tag-Modus verwenden</string>
+    <string name="live_display_night">Nacht</string>
+    <string name="live_display_night_summary">Nur Nacht-Modus verwenden</string>
+    <string name="live_display_outdoor">Im Freien (helle Sonne)</string>
+    <string name="live_display_outdoor_summary">Nur Outdoor Einstellungen verwenden</string>
+    <string name="live_display_hint">LiveDisplay entlastet Ihre Augen und lässt Sie nachts besser schlafen. Klicken Sie hier, um es auszuprobieren!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay aus.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: Automatischer Modus.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: Tag Modus.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: Nachtmodus.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: Outdoor-Modus.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay zu Automatischen-Modus gewechselt.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay auf Tag-Modus geändert.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay auf Nacht-Modus geändert.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay auf Outdoor-Modus geändert.</string>
+    <!-- Global actions -->
+    <string name="reboot_to_bootloader_title">Neustart ins Bootloader</string>
+    <string name="reboot_to_bootloader_message">Neustart ins Bootloader\u2026</string>
+    <string name="reboot_to_recovery_title">Neustart ins Recovery</string>
+    <string name="reboot_to_recovery_message">Neustart ins Recovery\u2026</string>
+    <string name="reboot_system_title">System neustarten</string>
+    <string name="reboot_system_message">System wird neu gestartet</string>
+</resources>

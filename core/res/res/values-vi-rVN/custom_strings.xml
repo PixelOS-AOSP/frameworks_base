@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2021, The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Tự động</string>
+    <string name="live_display_auto_summary">Tự động điều chỉnh nhiệt độ màu của màn hình sau khi mặt trời lặn và mặt trời mọc</string>
+    <string name="live_display_off">Tắt</string>
+    <string name="live_display_off_summary">Vô hiệu hoá tất cả</string>
+    <string name="live_display_day">Ban ngày</string>
+    <string name="live_display_day_summary">Chỉ sử dụng cài đặt ban ngày</string>
+    <string name="live_display_night">Ban đêm</string>
+    <string name="live_display_night_summary">Chỉ sử dụng cài đặt ban đêm</string>
+    <string name="live_display_outdoor">Ngoài trời (nắng mạnh)</string>
+    <string name="live_display_outdoor_summary">Chỉ sử dụng thiết lập ngoài trời</string>
+    <string name="live_display_hint">LiveDisplay có thể giúp giảm mỏi mắt và cải thiện giấc ngủ. Nhấn vào đây để thử!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay tắt.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: tự động.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: ban ngày.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: ban đêm.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">Hiển Thị Linh Hoạt: ngoài trời.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay đã tắt.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay đã đổi sang tự động.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay đã đổi sang chế độ ngày.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay đã đổi sang chế độ ngoài trời.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay đã đổi sang chế độ ngoài trời.</string>
+    <!-- Global actions -->
+    <string name="reboot_to_bootloader_title">Khởi động vào Bootloader</string>
+    <string name="reboot_to_bootloader_message">Đang khởi động vào Bootloader\u2026</string>
+    <string name="reboot_to_recovery_title">Khởi động vào Recovery</string>
+    <string name="reboot_to_recovery_message">Đang khởi động lại vào Recovery\u2026</string>
+    <string name="reboot_system_title">Khởi động lại</string>
+    <string name="reboot_system_message">Khởi động lại hệ thống\u2026</string>
+</resources>
