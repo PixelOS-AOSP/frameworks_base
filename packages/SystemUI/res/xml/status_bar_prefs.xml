@@ -67,7 +67,8 @@
     <com.android.settings.custom.preference.SecureSettingSwitchPreference
         android:key="show_wifi_standard_icon"
         android:title="@string/show_wifi_standard_icon_title"
-        android:defaultValue="false" />
+        android:defaultValue="false"
+        android:icon="@drawable/ic_statusbar_wifi_standard" />
 
     <com.android.systemui.tuner.StatusBarSwitch
         android:key="ethernet"
