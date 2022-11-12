@@ -878,16 +878,21 @@ public class NotificationPanelViewController extends PanelViewController {
         });
         mBottomAreaShadeAlphaAnimator.setDuration(160);
         mBottomAreaShadeAlphaAnimator.setInterpolator(Interpolators.ALPHA_OUT);
+
         mDoubleTapGestureListener = new GestureDetector(mView.getContext(),
                 new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent event) {
-                final PowerManager pm = (PowerManager) mView.getContext().getSystemService(
-                        Context.POWER_SERVICE);
-                pm.goToSleep(event.getEventTime());
+                // quick pulldown can trigger those values
+                // on double tap - so reset them
+                mQsExpandImmediate = false;
+                requestPanelHeightUpdate();
+                setListening(false);
+                mPowerManager.goToSleep(event.getEventTime());
                 return true;
             }
         });
+
         mEntryManager = notificationEntryManager;
         mConversationNotificationManager = conversationNotificationManager;
         mAuthController = authController;
@@ -4221,19 +4226,14 @@ public class NotificationPanelViewController extends PanelViewController {
                     return false;
                 }
 
-                if (mBarState == StatusBarState.KEYGUARD && !mPulsing && !mDozing &&
+                // Double tap to sleep on keyguard
+                if ((mBarState == StatusBarState.KEYGUARD && !mPulsing && !mDozing &&
                         Settings.Secure.getIntForUser(mView.getContext().getContentResolver(),
-                        Settings.Secure.DOUBLE_TAP_TO_WAKE, 0, UserHandle.USER_CURRENT) == 1) {
+                        Settings.Secure.DOUBLE_TAP_TO_WAKE, 0, UserHandle.USER_CURRENT) == 1)
+                        // Double tap to sleep on statusbar
+                        || (mDoubleTapToSleepEnabled && !mQsExpanded
+                        && event.getY() < mStatusBarHeaderHeight)) {
                     mDoubleTapGestureListener.onTouchEvent(event);
-                } else if (!mQsExpanded
-                        && mDoubleTapToSleepEnabled
-                        && event.getY() < mStatusBarHeaderHeight) {
-                    mDoubleTapGestureListener.onTouchEvent(event);
-                    // quick pulldown can trigger those values
-                    // on double tap - so reset them
-                    mQsExpandImmediate = false;
-                    requestPanelHeightUpdate();
-                    setListening(false);
                 }
 
                 // Make sure the next touch won't the blocked after the current ends.
