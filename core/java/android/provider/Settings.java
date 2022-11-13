@@ -5667,13 +5667,6 @@ public final class Settings {
         public static final String GLOBAL_ACTIONS_LIST = "global_actions_list";
 
         /**
-         * Whether volume button music control is enabled.
-         * Default 0.
-         * @hide
-         */
-        public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
-
-        /**
          * Whether to enable the ripple animation on fingerprint unlock
          * @hide
          */
