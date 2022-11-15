@@ -41,4 +41,10 @@
     <string name="reboot_to_recovery_message">Nag-rereboot sa recovery</string>
     <string name="reboot_system_title">I-restart ang system</string>
     <string name="reboot_system_message">Nag-rerestart ang system</string>
+    <!-- Face unlock -->
+    <string name="face_unlock_disabled_idle">Ang face unlock ay disabled dahil sa kawalan ng aktibidad</string>
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">Kopyahin ang crash log URL</string>
+    <string name="url_copy_success">Matagumpay na nakopya ang URL</string>
+    <string name="url_copy_failed">Isang error ang nangyari habang ina-upload ang log sa Memochõ</string>
 </resources>

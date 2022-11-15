@@ -76,4 +76,8 @@
     <string name="turn_on_bluetooth">Bluetooth</string>
     <string name="bluetooth_is_off">Bluetooth je vypnutý</string>
     <string name="tap_a_device_to_connect">Kliknutím na zariadenie sa pripojíte</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Rozpoznávanie tváre...</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Zobrazovať ikonu Wi-Fi štandardu</string>
 </resources>

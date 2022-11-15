@@ -13,32 +13,38 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- LiveDisplay strings -->
-    <string name="live_display_auto">Automatic</string>
-    <string name="live_display_auto_summary">Automatically adjust color temperature of screen after sunset and sunrise</string>
-    <string name="live_display_off">Off</string>
-    <string name="live_display_off_summary">Disable all adjustments</string>
-    <string name="live_display_day">Day</string>
-    <string name="live_display_day_summary">Use day settings only</string>
-    <string name="live_display_night">Night</string>
-    <string name="live_display_night_summary">Use night settings only</string>
-    <string name="live_display_outdoor">Outdoor (bright sun)</string>
-    <string name="live_display_outdoor_summary">Use outdoor settings only</string>
-    <string name="live_display_hint">LiveDisplay can help reduce eyestrain and help you sleep at night. Click here to try it out!</string>
-    <string name="accessibility_quick_settings_live_display_off">LiveDisplay off.</string>
-    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: auto mode.</string>
-    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: day mode.</string>
-    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: night mode.</string>
-    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: outdoor mode.</string>
-    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay turned off.</string>
-    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay changed to auto mode.</string>
-    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay changed to day mode.</string>
-    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay changed to night mode.</string>
-    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay changed to outdoor mode.</string>
+    <string name="live_display_auto">Automatico</string>
+    <string name="live_display_auto_summary">Regola automaticamente la temperatura del colore dello schermo dopo il tramonto e l\'alba</string>
+    <string name="live_display_off">Non attivo</string>
+    <string name="live_display_off_summary">Disabilita tutte le modifiche</string>
+    <string name="live_display_day">Giorno</string>
+    <string name="live_display_day_summary">Usa le impostazioni per il giorno</string>
+    <string name="live_display_night">Notte</string>
+    <string name="live_display_night_summary">Usa le impostazioni per la notte</string>
+    <string name="live_display_outdoor">All\'aperto (luce del sole)</string>
+    <string name="live_display_outdoor_summary">Usa solo le impostazioni all\'aperto</string>
+    <string name="live_display_hint">LiveDisplay può aiutare a ridurre l\'affaticamento degli occhi e aiutarti a dormire la notte. Clicca qui per provarlo!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay spento.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modalità automatica.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: Modalità Giorno.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: Modalità Notte.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modalità all\'aperto.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay Disattivato.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay cambiato in Modalità Automatica.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay cambiato in Modalità Giorno.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay cambiato in Modalità Notte.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay cambiato in Modalità all\'Aperto.</string>
     <!-- Global actions -->
-    <string name="reboot_to_bootloader_title">Reboot bootloader</string>
-    <string name="reboot_to_bootloader_message">Rebooting to bootloader\u2026</string>
-    <string name="reboot_to_recovery_title">Reboot recovery</string>
-    <string name="reboot_to_recovery_message">Rebooting to recovery\u2026</string>
-    <string name="reboot_system_title">Restart system</string>
-    <string name="reboot_system_message">Restarting system\u2026</string>
+    <string name="reboot_to_bootloader_title">Riavvia in bootloader</string>
+    <string name="reboot_to_bootloader_message">Riavvio in bootloader\u2026</string>
+    <string name="reboot_to_recovery_title">Riavvia in recovery</string>
+    <string name="reboot_to_recovery_message">Riavvio in recovery\u2026</string>
+    <string name="reboot_system_title">Riavvia sistema</string>
+    <string name="reboot_system_message">Riavvio sistema\u2026</string>
+    <!-- Face unlock -->
+    <string name="face_unlock_disabled_idle">Sblocco con il viso disattivato per inattività</string>
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">Copia l\'URL del log di crash</string>
+    <string name="url_copy_success">URL copiato</string>
+    <string name="url_copy_failed">Si è verificato un errore durante il caricamento del log su Memochō</string>
 </resources>

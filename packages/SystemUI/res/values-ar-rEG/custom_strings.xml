@@ -76,4 +76,8 @@
     <string name="turn_on_bluetooth">بلوتوث</string>
     <string name="bluetooth_is_off">البلوتوث غير مفعل</string>
     <string name="tap_a_device_to_connect">انقر على جهاز للاتصال</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Recognizing face...</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi Standard icon</string>
 </resources>

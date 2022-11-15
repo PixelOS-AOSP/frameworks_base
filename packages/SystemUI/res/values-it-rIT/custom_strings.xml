@@ -19,61 +19,65 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Custom QS tiles -->
     <!-- Ambient display QS tile -->
-    <string name="quick_settings_ambient_display_label">Ambient display</string>
-    <string name="accessibility_quick_settings_ambient_display_off">Ambient display off.</string>
-    <string name="accessibility_quick_settings_ambient_display_on">Ambient display on.</string>
+    <string name="quick_settings_ambient_display_label">Ambient Display</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Ambient Display spento.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambient Display acceso.</string>
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
-    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD spento\nRisparmio Energetico</string>
     <!-- Caffeine QS tile -->
-    <string name="quick_settings_caffeine_label">Caffeine</string>
-    <string name="accessibility_quick_settings_caffeine_off">Caffeine off.</string>
-    <string name="accessibility_quick_settings_caffeine_on">Caffeine on.</string>
+    <string name="quick_settings_caffeine_label">Caffeina</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeina spenta.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caffeina accesa.</string>
     <!-- Heads up QS tile -->
-    <string name="quick_settings_heads_up_label">Heads up</string>
-    <string name="accessibility_quick_settings_heads_up_off">Heads up off.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
+    <string name="quick_settings_heads_up_label">Notifiche Fluttuanti</string>
+    <string name="accessibility_quick_settings_heads_up_off">Notifiche Fluttuanti spente.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Notifiche Fluttuanti accese.</string>
     <!-- Sync QS tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off.</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on.</string>
+    <string name="quick_settings_sync_label">Sincronizzazione</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronizzazione spenta.</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronizzazione accesa.</string>
     <!-- USB tethering QS tile -->
-    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <string name="quick_settings_usb_tether_label">Tethering USB</string>
     <!-- VPN QS tile -->
     <string name="quick_settings_vpn_label">VPN</string>
-    <string name="quick_settings_vpn_connect_dialog_title">Connect to\u2026</string>
-    <string name="vpn_credentials_hint">Please enter your credentials for connecting to <xliff:g id="name">%s</xliff:g></string>
+    <string name="quick_settings_vpn_connect_dialog_title">Connettiti a\u2026</string>
+    <string name="vpn_credentials_hint">Inserisci le tue credenziali per la connessione a <xliff:g id="name">%s</xliff:g></string>
     <string name="vpn_credentials_username">Username</string>
     <string name="vpn_credentials_password">Password</string>
-    <string name="vpn_credentials_dialog_connect">Connect</string>
+    <string name="vpn_credentials_dialog_connect">Connetti</string>
     <!-- Title of statusbar tuner -->
-    <string name="status_bar_icons">Status bar icons</string>
+    <string name="status_bar_icons">Icone Barra di Stato</string>
     <!-- Name of the VPN status bar icon. -->
     <string name="status_bar_vpn">VPN</string>
     <!-- Name of the roaming status bar icon. -->
-    <string name="status_bar_roaming">Roaming indicator</string>
+    <string name="status_bar_roaming">Indicatore roaming</string>
     <!-- Name of the data saver status bar icon. -->
-    <string name="status_bar_data_saver">Data saver</string>
+    <string name="status_bar_data_saver">Risparmio dati</string>
     <!-- Reader mode QS tile -->
-    <string name="quick_settings_reading_mode">Reading mode</string>
-    <string name="accessibility_quick_settings_reading_mode_on">Reading mode on.</string>
-    <string name="accessibility_quick_settings_reading_mode_off">Reading mode off.</string>
-    <string name="accessibility_quick_settings_reading_mode_changed_on">Reading mode turned on.</string>
-    <string name="accessibility_quick_settings_reading_mode_changed_off">Reading mode turned off.</string>
+    <string name="quick_settings_reading_mode">Modalità Lettura</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Modalità Lettura accesa.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Modalità Lettura spenta.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Modalità Lettura attivata.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Modalità Lettura disattivata.</string>
     <!-- Anti flicker QS tile -->
-    <string name="quick_settings_anti_flicker">Anti flicker</string>
+    <string name="quick_settings_anti_flicker">Anti-sfarfallio</string>
     <!-- Power Menu -->
-    <string name="global_action_reboot">Restart</string>
-    <string name="global_action_reboot_more">Advanced</string>
-    <string name="global_action_reboot_sub">System</string>
+    <string name="global_action_reboot">Riavvia</string>
+    <string name="global_action_reboot_more">Avanzate</string>
+    <string name="global_action_reboot_sub">Sistema</string>
     <string name="global_action_reboot_recovery">Recovery</string>
     <string name="global_action_reboot_bootloader">Bootloader</string>
     <string name="global_action_reboot_systemui">SystemUI</string>
-    <string name="global_action_settings">Settings</string>
+    <string name="global_action_settings">Impostazioni</string>
     <!-- Autobrightness tile -->
-    <string name="quick_settings_autobrightness_label">Auto brightness</string>
+    <string name="quick_settings_autobrightness_label">Luminosità Automatica</string>
     <!-- Bluetooth dialog -->
     <string name="turn_on_bluetooth">Bluetooth</string>
-    <string name="bluetooth_is_off">Bluetooth is off</string>
-    <string name="tap_a_device_to_connect">Tap a device to connect</string>
+    <string name="bluetooth_is_off">Bluetooth disattivato</string>
+    <string name="tap_a_device_to_connect">Tocca un dispositivo per connetterti</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Riconoscimento del volto...</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Icona Standard Wi-Fi</string>
 </resources>

@@ -74,6 +74,10 @@
     <string name="quick_settings_autobrightness_label">Автояскравість</string>
     <!-- Bluetooth dialog -->
     <string name="turn_on_bluetooth">Bluetooth</string>
-    <string name="bluetooth_is_off">Bluetooth is off</string>
-    <string name="tap_a_device_to_connect">Tap a device to connect</string>
+    <string name="bluetooth_is_off">Bluetooth вимкнено</string>
+    <string name="tap_a_device_to_connect">Виберіть пристрій для підключення</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Розпізнавання обличчя...</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Показувати стандартну піктограму Wi-Fi</string>
 </resources>

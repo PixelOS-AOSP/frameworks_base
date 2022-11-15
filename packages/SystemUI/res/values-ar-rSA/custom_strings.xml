@@ -19,11 +19,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Custom QS tiles -->
     <!-- Ambient display QS tile -->
-    <string name="quick_settings_ambient_display_label">Ambient display</string>
-    <string name="accessibility_quick_settings_ambient_display_off">Ambient display off.</string>
-    <string name="accessibility_quick_settings_ambient_display_on">Ambient display on.</string>
+    <string name="quick_settings_ambient_display_label">شاشة Ambient</string>
+    <string name="accessibility_quick_settings_ambient_display_off">شاشة Ambient متوقفة.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">شاشة Ambient تعمل.</string>
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_label">دائما على الشاشة</string>
     <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
@@ -76,4 +76,8 @@
     <string name="turn_on_bluetooth">Bluetooth</string>
     <string name="bluetooth_is_off">Bluetooth is off</string>
     <string name="tap_a_device_to_connect">Tap a device to connect</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Recognizing face...</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi Standard icon</string>
 </resources>

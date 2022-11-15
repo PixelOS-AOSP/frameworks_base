@@ -76,4 +76,8 @@
     <string name="turn_on_bluetooth">Bluetooth</string>
     <string name="bluetooth_is_off">Bluetooth desactivado</string>
     <string name="tap_a_device_to_connect">Selecciona un dispositivo para conectarte</string>
+    <!-- Face Unlock -->
+    <string name="face_unlock_recognizing">Reconociendo rostro...</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Mostrar icono estándar de Wi-Fi</string>
 </resources>
