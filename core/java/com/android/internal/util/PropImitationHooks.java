@@ -20,7 +20,6 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
-import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -96,7 +95,7 @@ public class PropImitationHooks {
         final String packageName = context.getPackageName();
         final String processName = Application.getProcessName();
 
-        if (TextUtils.isEmpty(packageName) || processName == null) {
+        if (TextUtils.isEmpty(packageName) || TextUtils.isEmpty(processName)) {
             dlog("Null package or process name");
             return;
         }
@@ -105,6 +104,12 @@ public class PropImitationHooks {
         sIsFinsky = packageName.equals(PACKAGE_FINSKY);
         sIsPhotos = sSpoofGapps && packageName.equals(PACKAGE_GPHOTOS);
 
+        /* Set Certified Properties for GMSCore
+         * Set Stock Fingerprint for ARCore
+         * Set Pixel 5 for Google, ASI and GMS device configurator
+         * Set Pixel XL for Google Photos
+         * Set custom model for Netflix
+         */
         if (sCertifiedProps.length == 4 && sIsGms) {
             dlog("Spoofing build for GMS");
             setPropValue("DEVICE", sCertifiedProps[0]);
