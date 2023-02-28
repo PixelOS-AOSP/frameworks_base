@@ -70,9 +70,6 @@
          1: Right side -->
     <integer name="config_alertSliderLocation">0</integer>
 
-    <!-- Whether devices suports in-display fingerprint when screen is off -->
-    <bool name="config_supportsScreenOffUdfps">false</bool>
-
     <!-- Array containing custom error messages from vendor. -->
     <string-array name="face_error_vendor" translatable="false">
         <item>@string/face_unlock_disabled_idle</item>

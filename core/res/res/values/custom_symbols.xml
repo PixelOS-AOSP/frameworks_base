@@ -59,9 +59,6 @@
     <java-symbol type="bool" name="config_hasAlertSlider" />
     <java-symbol type="integer" name="config_alertSliderLocation" />
 
-    <!-- Whether devices suports in-display fingerprint when screen is off -->
-    <java-symbol type="bool" name="config_supportsScreenOffUdfps" />
-
     <!-- Enable face auth only when swiping security view -->
     <java-symbol type="bool" name="config_faceAuthOnlyOnSecurityView" />
 
