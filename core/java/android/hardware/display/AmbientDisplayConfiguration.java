@@ -110,6 +110,12 @@ public class AmbientDisplayConfiguration {
     }
 
     /** @hide */
+    public boolean pickupGestureAmbient(int user) {
+        return boolSettingDefaultOff(Settings.Secure.DOZE_PICK_UP_GESTURE_AMBIENT, user)
+                && pickupGestureEnabled(user) && pulseOnNotificationEnabled(user);
+    }
+
+    /** @hide */
     public boolean dozePickupSensorAvailable() {
         return mContext.getResources().getBoolean(R.bool.config_dozePulsePickup);
     }
@@ -118,6 +124,12 @@ public class AmbientDisplayConfiguration {
     public boolean tapGestureEnabled(int user) {
         return boolSettingDefaultOn(Settings.Secure.DOZE_TAP_SCREEN_GESTURE, user)
                 && tapSensorAvailable();
+    }
+
+    /** @hide */
+    public boolean tapGestureAmbient(int user) {
+        return boolSettingDefaultOff(Settings.Secure.DOZE_TAP_GESTURE_AMBIENT, user)
+                && tapGestureEnabled(user) && pulseOnNotificationEnabled(user);
     }
 
     /** @hide */
