@@ -6478,6 +6478,13 @@ public final class Settings {
          */
         public static final String HIDE_POWERMENU_LOCKSCREEN = "hide_powermenu_lockscreen";
 
+
+        /**
+         * Whether to display reboot in the power menu
+         * @hide
+         */
+        public static final String POWERMENU_ADVANCED = "powermenu_advanced";
+
         /**
          * When to use Wi-Fi calling
          *
