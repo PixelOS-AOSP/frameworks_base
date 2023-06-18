@@ -120,6 +120,8 @@ import javax.inject.Inject;
 @SysUISingleton
 public class ThemeOverlayController implements CoreStartable, Dumpable {
     protected static final String TAG = "ThemeOverlayController";
+    protected static final String OVERLAY_BERRY_BLACK_THEME =
+            "net.pixelos.overlay.customization.blacktheme";
     private static final boolean DEBUG = true;
 
     private final ThemeOverlayApplier mThemeManager;
@@ -490,6 +492,27 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
             reevaluateSystemTheme(true /* forceReload */);
         });
 
+        mSecureSettings.registerContentObserverForUserSync(
+                Settings.Secure.getUriFor(Settings.Secure.BERRY_BLACK_THEME),
+                false,
+                new ContentObserver(mBgHandler) {
+                    @Override
+                    public void onChange(boolean selfChange, Collection<Uri> collection, int flags,
+                            int userId) {
+                        if (DEBUG) Log.d(TAG, "Overlay changed for user: " + userId);
+                        if (mUserTracker.getUserId() != userId) {
+                            return;
+                        }
+                        if (!mDeviceProvisionedController.isUserSetup(userId)) {
+                            Log.i(TAG, "Theme application deferred when setting changed.");
+                            mDeferredThemeEvaluation = true;
+                            return;
+                        }
+                        reevaluateSystemTheme(true /* forceReload */);
+                    }
+                },
+                UserHandle.USER_ALL);
+
         // All wallpaper color and keyguard logic only applies when Monet is enabled.
         if (!mIsMonetEnabled) {
             return;
@@ -788,6 +811,14 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
             categoryToPackage.put(OVERLAY_CATEGORY_DYNAMIC_COLOR, mDynamicOverlay.getIdentifier());
         }
 
+        boolean isBlackMode = (Settings.Secure.getIntForUser(
+                mContext.getContentResolver(), Settings.Secure.BERRY_BLACK_THEME,
+                0, currentUser) == 1) && isNightMode();
+        if (categoryToPackage.containsKey(OVERLAY_CATEGORY_SYSTEM_PALETTE) && isBlackMode) {
+            OverlayIdentifier blackTheme = new OverlayIdentifier(OVERLAY_BERRY_BLACK_THEME);
+            categoryToPackage.put(OVERLAY_CATEGORY_SYSTEM_PALETTE, blackTheme);
+        }
+
         Set<UserHandle> managedProfiles = new HashSet<>();
         for (UserInfo userInfo : mUserManager.getEnabledProfiles(currentUser)) {
             if (userInfo.isProfile()) {
@@ -800,12 +831,6 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
                     + currentUser);
             mActivityManager.setThemeOverlayReady(currentUser);
         };
-
-        if (colorSchemeIsApplied(managedProfiles)) {
-            Log.d(TAG, "Skipping overlay creation. Theme was already: " + mColorScheme);
-            onCompleteCallback.run();
-            return;
-        }
 
         if (DEBUG) {
             Log.d(TAG, "Applying overlays: " + categoryToPackage.keySet().stream()
