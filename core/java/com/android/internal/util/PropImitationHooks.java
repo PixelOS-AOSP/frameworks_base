@@ -171,7 +171,7 @@ public class PropImitationHooks {
     private static volatile String sStockFp, sNetflixModel;
 
     private static volatile String sProcessName;
-    private static volatile boolean sIsGms, sIsFinsky, sIsPhotos;
+    private static volatile boolean sIsGms, sIsFinsky, sIsPhotos, sIsPixelLauncher, sIsASI;
 
     public static void setProps(Context context) {
         final String packageName = context.getPackageName();
@@ -196,6 +196,8 @@ public class PropImitationHooks {
         sIsGms = packageName.equals(PACKAGE_GMS) && processName.equals(PROCESS_GMS_UNSTABLE);
         sIsFinsky = packageName.equals(PACKAGE_FINSKY);
         sIsPhotos = packageName.equals(PACKAGE_GPHOTOS);
+        sIsPixelLauncher = packageName.equals(PACKAGE_NEXUSLAUNCHER);
+        sIsASI = packageName.equals(PACKAGE_ASI);
 
         /* Set certified properties for GMSCore
          * Set stock fingerprint for ARCore
@@ -229,13 +231,11 @@ public class PropImitationHooks {
         switch (packageName) {
             case PACKAGE_AIWALLPAPERS:
             case PACKAGE_ASSISTANT:
-            case PACKAGE_ASI:
             case PACKAGE_BARD:
             case PACKAGE_EMOJIWALLPAPER:
             case PACKAGE_GBOARD:
             case PACKAGE_GMS:
             case PACKAGE_LIVEWALLPAPER:
-            case PACKAGE_NEXUSLAUNCHER:
             case PACKAGE_PIXELSOUNDS:
             case PACKAGE_PIXELTHEMES:
             case PACKAGE_PIXELWALLPAPER:
@@ -413,6 +413,14 @@ public class PropImitationHooks {
                 dlog("Enabled system feature " + name + " for Google Photos");
                 has = true;
             }
+        }
+        if (sIsASI && has && sTensorFeatures.stream().anyMatch(name::contains)) {
+            dlog("Blocked system feature " + name + " for ASI");
+            return false;
+        }
+        if (sIsPixelLauncher && has && sTensorFeatures.stream().anyMatch(name::contains)) {
+            dlog("Blocked system feature " + name + " for Pixel Launcher");
+            return false;
         }
         return has;
     }
