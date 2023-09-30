@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Натисніть й утримуйте кнопку живлення, щоб примусово вийти з режиму \"У кишені\".</string>
     <string name="pocket_view_top_tag_number1">\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Контроль заряджання</string>
+    <string name="charging_control_notification_title">Контроль заряджання</string>
+    <string name="charging_control_notification_cancel_once">Скасувати</string>
+    <string name="charging_control_notification_content_limit">Акумулятор буде заряджено до %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Акумулятор заряджено до %1$d%%</string>
+    <string name="charging_control_notification_content_target">Акумулятор буде повністю заряджено о %s</string>
+    <string name="charging_control_notification_content_target_reached">Акумулятор заряджений</string>
 </resources>

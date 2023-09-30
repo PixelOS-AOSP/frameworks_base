@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Mantén pulsado el botón encendido para desactivar forzosamente el modo bolsillo.</string>
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Control de carga</string>
+    <string name="charging_control_notification_title">Control de carga</string>
+    <string name="charging_control_notification_cancel_once">Cancelar</string>
+    <string name="charging_control_notification_content_limit">La batería se cargará a un %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Batería cargada al %1$d%%</string>
+    <string name="charging_control_notification_content_target">La batería se cargará completamente en %1$s</string>
+    <string name="charging_control_notification_content_target_reached">Batería cargada</string>
 </resources>

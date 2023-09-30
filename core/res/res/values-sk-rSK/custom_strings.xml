@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Dlhým stlačením tlačidla napájania vynútite ukončenie režimu vo vrecku.</string>
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Ovládanie nabíjania</string>
+    <string name="charging_control_notification_title">Ovládanie nabíjania</string>
+    <string name="charging_control_notification_cancel_once">Zrušiť</string>
+    <string name="charging_control_notification_content_limit">Batéria bude nabitá na %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Batéria je nabitá na %1$d%%</string>
+    <string name="charging_control_notification_content_target">Batéria bude plne nabitá o %1$s</string>
+    <string name="charging_control_notification_content_target_reached">Batéria plne nabitá</string>
 </resources>

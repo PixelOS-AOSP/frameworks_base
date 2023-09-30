@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Tieni premuto il pulsante di accensione per forzare l\'uscita dalla modalità tasca.</string>
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Controllo della ricarica</string>
+    <string name="charging_control_notification_title">Controllo della ricarica</string>
+    <string name="charging_control_notification_cancel_once">Elimina</string>
+    <string name="charging_control_notification_content_limit">La batteria verrà caricata fino al %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">La batteria è carica al %1$d%%</string>
+    <string name="charging_control_notification_content_target">La batteria sarà completamente carica alle %1$s</string>
+    <string name="charging_control_notification_content_target_reached">La batteria è ricarica</string>
 </resources>

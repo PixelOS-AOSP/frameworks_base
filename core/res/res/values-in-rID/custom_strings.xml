@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Tekan lama tombol daya untuk memaksa keluar dari mode saku.</string>
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Kontrol pengisian daya</string>
+    <string name="charging_control_notification_title">Kontrol pengisian daya</string>
+    <string name="charging_control_notification_cancel_once">Batal</string>
+    <string name="charging_control_notification_content_limit">Baterai akan diisi daya hingga %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Baterai diisi daya hingga %1$d%%</string>
+    <string name="charging_control_notification_content_target">Baterai akan terisi penuh pada %1$s</string>
+    <string name="charging_control_notification_content_target_reached">Baterai terisi</string>
 </resources>

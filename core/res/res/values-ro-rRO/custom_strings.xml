@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Apasă lung butonul de pornire pentru a forța ieșirea din modul buzunar.</string>
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Control încărcare</string>
+    <string name="charging_control_notification_title">Control încărcare</string>
+    <string name="charging_control_notification_cancel_once">Anulare</string>
+    <string name="charging_control_notification_content_limit">Bateria va fi încărcată la %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Bateria este încărcată la %1$d%%</string>
+    <string name="charging_control_notification_content_target">Bateria va fi încărcată complet la %1$s</string>
+    <string name="charging_control_notification_content_target_reached">Bateria este încărcată</string>
 </resources>

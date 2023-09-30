@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Cep modundan çıkmak için güç tuşuna basılı tutun.</string>
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Şarj kontrolü</string>
+    <string name="charging_control_notification_title">Şarj kontrolü</string>
+    <string name="charging_control_notification_cancel_once">Vazgeç</string>
+    <string name="charging_control_notification_content_limit">Pil %1$d%% seviyesine kadar şarj edilecek</string>
+    <string name="charging_control_notification_content_limit_reached">Pil %1$d%% seviyesine kadar şarj edildi</string>
+    <string name="charging_control_notification_content_target">Batarya %1$s%% saatinde şarj edilmiş olacak</string>
+    <string name="charging_control_notification_content_target_reached">Batarya şarj oldu</string>
 </resources>

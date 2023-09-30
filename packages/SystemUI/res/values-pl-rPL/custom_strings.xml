@@ -68,7 +68,7 @@
     <!-- Advanced Reboot -->
     <string name="global_action_restart_advanced">Zaawansowane</string>
     <string name="global_action_restart_recovery">Tryb recovery</string>
-    <string name="global_action_restart_bootloader">Tryb bootloader</string>
+    <string name="global_action_restart_bootloader">Restart do trybu bootloader\'a</string>
     <string name="global_action_restart_ui">Zresetuj Interfejs</string>
     <!-- Data usage info in QS footer -->
     <string name="usage_data">użyto dziś</string>

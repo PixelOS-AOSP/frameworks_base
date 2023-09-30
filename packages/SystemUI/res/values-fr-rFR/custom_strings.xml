@@ -18,7 +18,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">Affichage e mode veille</string>
+    <string name="quick_settings_aod_label">Affichage permanent</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caféine</string>
     <string name="accessibility_quick_settings_caffeine_off">Caféine désactivé.</string>

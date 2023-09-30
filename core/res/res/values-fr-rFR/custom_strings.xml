@@ -56,4 +56,12 @@
     <string name="pocket_view_top_tag_cancel2">Appuyez longuement sur le bouton d\'alimentation pour quitter le mode poche.</string>
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Contrôle de charge</string>
+    <string name="charging_control_notification_title">Contrôle de charge</string>
+    <string name="charging_control_notification_cancel_once">Annuler</string>
+    <string name="charging_control_notification_content_limit">La batterie sera chargée à %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">La batterie est chargée à %1$d%%</string>
+    <string name="charging_control_notification_content_target">La batterie sera complètement chargée à %1$s</string>
+    <string name="charging_control_notification_content_target_reached">La batterie est chargée</string>
 </resources>
