@@ -50,4 +50,7 @@
         <item quantity="other">%d devices connected</item>
     </plurals>
 
+    <!-- Text while recognizing face -->
+    <string name="face_unlock_recognizing">Recognizing face...</string>
+
 </resources>
