@@ -17,11 +17,12 @@
  
     <!-- Health interface -->
     <java-symbol type="bool" name="config_chargingControlEnabled" />
+    <java-symbol type="bool" name="config_chargingControlToggleSetAlways" />
+    <java-symbol type="drawable" name="ic_charging_control" />
     <java-symbol type="integer" name="config_defaultChargingControlMode" />
     <java-symbol type="integer" name="config_defaultChargingControlStartTime" />
     <java-symbol type="integer" name="config_defaultChargingControlTargetTime" />
     <java-symbol type="integer" name="config_defaultChargingControlLimit" />
-    <java-symbol type="drawable" name="ic_charging_control" />
     <java-symbol type="integer" name="config_chargingControlTimeMargin" />
     <java-symbol type="integer" name="config_chargingControlBatteryRechargeMargin" />
     <java-symbol type="string" name="charging_control_notification_channel" />
