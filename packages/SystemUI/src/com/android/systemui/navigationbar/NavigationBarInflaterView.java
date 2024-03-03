@@ -212,7 +212,9 @@ public class NavigationBarInflaterView extends FrameLayout
         } else if (KEY_NAVIGATION_HINT.equals(key)) {
             mIsHintDisabled = TunerService.parseIntegerSwitch(newValue, false);
             updateHint();
-            onLikelyDefaultLayoutChange();
+            mContext.getMainExecutor().execute(() -> {
+                        onLikelyDefaultLayoutChange();
+                    });
         }
     }
 
