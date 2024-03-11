@@ -32,7 +32,6 @@ import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 import android.annotation.CallSuper;
 import android.annotation.NonNull;
 import android.annotation.SuppressLint;
-import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -40,7 +39,6 @@ import android.metrics.LogMaker;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.format.DateUtils;
 import android.util.ArraySet;
@@ -74,6 +72,7 @@ import com.android.systemui.qs.QsEventLogger;
 import com.android.systemui.qs.SideLabelTileLayout;
 import com.android.systemui.qs.flags.QsInCompose;
 import com.android.systemui.qs.logging.QSLogger;
+import com.android.systemui.statusbar.policy.KeyguardStateController;
 
 import java.io.PrintWriter;
 import java.util.Objects;
@@ -275,6 +274,34 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
         return true;
     }
 
+    public enum Action {
+        CLICK,
+        SECONDARY_CLICK,
+        LONG_CLICK,
+    }
+
+    public boolean isAllowedWhenLocked(Action action) {
+        boolean isSecuredQSEnabled = Settings.Secure.getInt(mContext.getContentResolver(),
+                                     Settings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 1) == 1;
+        return isSecuredQSEnabled;
+    }
+
+    void handleAction(Action action, Runnable handler) {
+        if (isAllowedWhenLocked(action)) {
+            handler.run();
+            return;
+        }
+
+        KeyguardStateController ksc = mHost.getKeyguardStateController();
+        boolean hasSecureKeyguard = ksc.isMethodSecure() && ksc.isShowing();
+
+        if (hasSecureKeyguard) {
+            mActivityStarter.postQSRunnableDismissingKeyguard(handler);
+        } else {
+            handler.run();
+        }
+    }
+
     // safe to call from any thread
 
     public void addCallback(Callback callback) {
@@ -291,44 +318,44 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
 
     @Override
     public void click(@Nullable Expandable expandable) {
+        mMetricsLogger.write(populate(new LogMaker(ACTION_QS_CLICK).setType(TYPE_ACTION)
+                .addTaggedData(FIELD_STATUS_BAR_STATE,
+                        mStatusBarStateController.getState())));
+        mUiEventLogger.logWithInstanceId(QSEvent.QS_ACTION_CLICK, 0, getMetricsSpec(),
+                getInstanceId());
         final int eventId = mClickEventId++;
         mQSLogger.logTileClick(mTileSpec, mStatusBarStateController.getState(), mState.state,
                 eventId);
         if (!mFalsingManager.isFalseTap(FalsingManager.LOW_PENALTY)) {
-            handleClick(ACTION_QS_CLICK, QSEvent.QS_ACTION_CLICK, H.CLICK, eventId, expandable);
+            mHandler.obtainMessage(H.CLICK, eventId, 0, expandable).sendToTarget();
         }
     }
 
     @Override
     public void secondaryClick(@Nullable Expandable expandable) {
+        mMetricsLogger.write(populate(new LogMaker(ACTION_QS_SECONDARY_CLICK).setType(TYPE_ACTION)
+                .addTaggedData(FIELD_STATUS_BAR_STATE,
+                        mStatusBarStateController.getState())));
+        mUiEventLogger.logWithInstanceId(QSEvent.QS_ACTION_SECONDARY_CLICK, 0, getMetricsSpec(),
+                getInstanceId());
         final int eventId = mClickEventId++;
         mQSLogger.logTileSecondaryClick(mTileSpec, mStatusBarStateController.getState(),
                 mState.state, eventId);
-        handleClick(ACTION_QS_SECONDARY_CLICK, QSEvent.QS_ACTION_SECONDARY_CLICK, H.SECONDARY_CLICK,
-                eventId, expandable);
+        mHandler.obtainMessage(H.SECONDARY_CLICK, eventId, 0, expandable).sendToTarget();
     }
-
 
     @Override
     public void longClick(@Nullable Expandable expandable) {
+        mMetricsLogger.write(populate(new LogMaker(ACTION_QS_LONG_PRESS).setType(TYPE_ACTION)
+                .addTaggedData(FIELD_STATUS_BAR_STATE,
+                        mStatusBarStateController.getState())));
+        mUiEventLogger.logWithInstanceId(QSEvent.QS_ACTION_LONG_PRESS, 0, getMetricsSpec(),
+                getInstanceId());
         final int eventId = mClickEventId++;
         mQSLogger.logTileLongClick(mTileSpec, mStatusBarStateController.getState(), mState.state,
                 eventId);
         if (!mFalsingManager.isFalseLongTap(FalsingManager.LOW_PENALTY)) {
-            handleClick(ACTION_QS_LONG_PRESS, QSEvent.QS_ACTION_LONG_PRESS, H.LONG_CLICK,
-                    eventId, expandable);
-        }
-    }
-
-    private void handleClick(int category, QSEvent event, int message, int eventId, Expandable expandable) {
-        final KeyguardManager keyguardManager = mContext.getSystemService(KeyguardManager.class);
-        mMetricsLogger.write(populate(new LogMaker(category).setType(TYPE_ACTION)
-                .addTaggedData(FIELD_STATUS_BAR_STATE, mStatusBarStateController.getState())));
-        mUiEventLogger.logWithInstanceId(event, 0, getMetricsSpec(), getInstanceId());
-        if (!keyguardManager.isDeviceLocked() ||
-                Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 1) == 1) {
-            mHandler.obtainMessage(message, eventId, 0, expandable).sendToTarget();
+            mHandler.obtainMessage(H.LONG_CLICK, eventId, 0, expandable).sendToTarget();
         }
     }
 
@@ -619,16 +646,19 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
                         mActivityStarter.postStartActivityDismissingKeyguard(intent, 0);
                     } else {
                         mQSLogger.logHandleClick(mTileSpec, msg.arg1);
-                        handleClick((Expandable) msg.obj);
+                        Expandable view = (Expandable) msg.obj;
+                        handleAction(Action.CLICK, () -> handleClick(view));
                     }
                 } else if (msg.what == SECONDARY_CLICK) {
                     name = "handleSecondaryClick";
                     mQSLogger.logHandleSecondaryClick(mTileSpec, msg.arg1);
-                    handleSecondaryClick((Expandable) msg.obj);
+                    Expandable view = (Expandable) msg.obj;
+                    handleAction(Action.SECONDARY_CLICK, () -> handleSecondaryClick(view));
                 } else if (msg.what == LONG_CLICK) {
                     name = "handleLongClick";
                     mQSLogger.logHandleLongClick(mTileSpec, msg.arg1);
-                    handleLongClick((Expandable) msg.obj);
+                    Expandable view = (Expandable) msg.obj;
+                    handleAction(Action.LONG_CLICK, () -> handleLongClick(view));
                 } else if (msg.what == REFRESH_STATE) {
                     name = "handleRefreshState";
                     handleRefreshState(msg.obj);
