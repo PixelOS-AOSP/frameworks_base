@@ -72,6 +72,9 @@
     <!-- Build fingerprint from stock ROM -->
     <string name="config_stockFingerprint" translatable="false"></string>
 
+    <!-- Build fingerprint for PlayStore -->
+    <string name="config_finskyFingerprint" translatable="false">google/husky/husky:14/AP1A.240305.019.A1/11445699:user/release-keys</string>
+
     <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
     <string name="config_netflixSpoofModel" translatable="false"></string>
 
