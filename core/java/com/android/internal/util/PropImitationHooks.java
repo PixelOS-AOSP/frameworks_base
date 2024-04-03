@@ -84,7 +84,7 @@ public class PropImitationHooks {
         "MANUFACTURER", "Google",
         "BRAND", "google",
         "MODEL", "Pixel 8 Pro",
-        "FINGERPRINT", "google/husky/husky:14/AP1A.240305.019.A1/11445699:user/release-keys"
+        "FINGERPRINT", "google/husky/husky:14/AP1A.240405.002/11480754:user/release-keys"
     );
 
     private static final Map<String, String> sPixelOneProps = Map.of(
@@ -102,7 +102,7 @@ public class PropImitationHooks {
         "MANUFACTURER", "Google",
         "BRAND", "google",
         "MODEL", "Pixel Tablet",
-        "FINGERPRINT", "google/tangorpro/tangorpro:14/AP1A.240305.019.A1/11445699:user/release-keys"
+        "FINGERPRINT", "google/tangorpro/tangorpro:14/AP1A.240405.002/11480754:user/release-keys"
     );
 
     private static final Set<String> sPixelFeatures = Set.of(
