@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2021 The Android Open Source Project
  *
@@ -58,6 +59,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
+import android.os.PowerManager;
+import android.os.Process;
 import android.os.SystemProperties;
 import android.os.Trace;
 import android.os.UserHandle;
@@ -592,6 +595,45 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
 
         ShutDownAction shutdownAction = new ShutDownAction();
         RestartAction restartAction = new RestartAction();
+
+        AdvancedAction restartRecoveryAction = new AdvancedAction(
+                com.android.systemui.R.drawable.ic_restart_recovery,
+                com.android.systemui.R.string.global_action_restart_recovery
+        ) {
+            @Override
+            public void onPress() {
+                mHandler.sendEmptyMessage(MESSAGE_DISMISS);
+                mWindowManagerFuncs.advancedReboot(PowerManager.REBOOT_RECOVERY);
+            }
+        };
+
+        AdvancedAction restartBootloaderAction = new AdvancedAction(
+                com.android.systemui.R.drawable.ic_restart_bootloader,
+                com.android.systemui.R.string.global_action_restart_bootloader
+        ) {
+            @Override
+            public void onPress() {
+                mHandler.sendEmptyMessage(MESSAGE_DISMISS);
+                mWindowManagerFuncs.advancedReboot(PowerManager.REBOOT_BOOTLOADER);
+            }
+        };
+
+        AdvancedAction restartSystemUiAction = new AdvancedAction(
+                com.android.systemui.R.drawable.ic_restart_ui,
+                com.android.systemui.R.string.global_action_restart_ui
+        ) {
+            @Override
+            public void onPress() {
+                /*
+                  No time and need to dismiss the dialog here, just kill systemui straight after telling to
+                  policy/GlobalActions that we hid the dialog within the kill action itself so its onStatusBarConnectedChanged
+                  won't show the LegacyGlobalActions after systemui restart.
+                */
+                mWindowManagerFuncs.onGlobalActionsHidden();
+                Process.killProcess(Process.myPid());
+            }
+        };
+
         ArraySet<String> addedKeys = new ArraySet<>();
         List<Action> tempActions = new ArrayList<>();
         CurrentUserProvider currentUser = new CurrentUserProvider();
@@ -603,7 +645,7 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
         }
 
         for (int i = 0; i < defaultActions.length; i++) {
-            String actionKey = defaultActions[i];
+             String actionKey = defaultActions[i];
             if (addedKeys.contains(actionKey)) {
                 // If we already have added this, don't add it again.
                 continue;
@@ -655,23 +697,28 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
             addedKeys.add(actionKey);
         }
 
-        // replace power and restart with a single power options action, if needed
-        if (tempActions.contains(shutdownAction) && tempActions.contains(restartAction)
-                && tempActions.size() > getMaxShownPowerItems()) {
-            // transfer shutdown and restart to their own list of power actions
-            int powerOptionsIndex = Math.min(tempActions.indexOf(restartAction),
-                    tempActions.indexOf(shutdownAction));
-            tempActions.remove(shutdownAction);
+        if (tempActions.contains(restartAction)) {
+            // transfer restart and advanced restart to their own list of power actions
+            // and position it where Reset button was supposed to be
+            int powerOptionsIndex = tempActions.indexOf(restartAction);
             tempActions.remove(restartAction);
-            mPowerItems.add(shutdownAction);
             mPowerItems.add(restartAction);
+            mPowerItems.add(restartBootloaderAction);
+            mPowerItems.add(restartRecoveryAction);
+            mPowerItems.add(restartSystemUiAction);
 
-            // add the PowerOptionsAction after Emergency, if present
+            // add the PowerOptionsAction after Emergency and Shutdown action, if present
             tempActions.add(powerOptionsIndex, new PowerOptionsAction());
         }
-        for (Action action : tempActions) {
-            addActionItem(action);
+        // Add also Power to power actions list, if needed
+        if (tempActions.contains(shutdownAction)
+                /*tempActions.size gets in count already PowerOptionsAction if added*/
+                && tempActions.size() > getMaxShownPowerItems()) {
+            tempActions.remove(shutdownAction);
+            mPowerItems.add(shutdownAction);
         }
+
+        tempActions.forEach(this::addActionItem);
     }
 
     protected void onRefresh() {
@@ -775,8 +822,8 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
     @VisibleForTesting
     protected final class PowerOptionsAction extends SinglePressAction {
         private PowerOptionsAction() {
-            super(com.android.systemui.res.R.drawable.ic_settings_power,
-                    R.string.global_action_power_options);
+            super(com.android.systemui.res.R.drawable.ic_restart_advanced,
+                    com.android.systemui.res.R.string.global_action_restart_advanced);
         }
 
         @Override
@@ -1502,10 +1549,29 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
     /**
      * The adapter used for items in the overflow menu.
      */
-    public class MyPowerOptionsAdapter extends BaseAdapter {
+    public class MyPowerOptionsAdapter extends MultiListAdapter {
+        public int countSeparatedItems() {
+            return 0;
+        }
+
+        @Override
+        public int countListItems() {
+            return mPowerItems.size();
+        }
+
         @Override
         public int getCount() {
-            return mPowerItems.size();
+            return countListItems();
+        }
+
+        @Override
+        public boolean isEnabled(int position) {
+            return true;
+        }
+
+        @Override
+        public boolean areAllItemsEnabled() {
+            return true;
         }
 
         @Override
@@ -1520,64 +1586,29 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Action action = getItem(position);
+            final Action action = getItem(position);
             if (action == null) {
                 Log.w(TAG, "No power options action found at position: " + position);
                 return null;
             }
-            int viewLayoutResource = com.android.systemui.res.R.layout.global_actions_power_item;
-            View view = convertView != null ? convertView
-                    : LayoutInflater.from(mContext).inflate(viewLayoutResource, parent, false);
+            final View view = action.create(mContext, convertView,
+                parent, LayoutInflater.from(mContext));
             view.setOnClickListener(v -> onClickItem(position));
-            if (action instanceof LongPressAction) {
-                view.setOnLongClickListener(v -> onLongClickItem(position));
-            }
-            ImageView icon = view.findViewById(R.id.icon);
-            TextView messageView = view.findViewById(R.id.message);
-            messageView.setSelected(true); // necessary for marquee to work
-
-            icon.setImageDrawable(action.getIcon(mContext));
-            icon.setScaleType(ScaleType.CENTER_CROP);
-
-            if (action.getMessage() != null) {
-                messageView.setText(action.getMessage());
-            } else {
-                messageView.setText(action.getMessageResId());
-            }
             return view;
         }
 
-        private boolean onLongClickItem(int position) {
-            final Action action = getItem(position);
-            if (action instanceof LongPressAction) {
-                if (mDialog != null) {
-                    // Usually clicking an item shuts down the phone, locks, or starts an activity.
-                    // We don't want to animate back into the power button when that happens, so we
-                    // disable the dialog animation before dismissing.
-                    mDialogTransitionAnimator.disableAllCurrentDialogsExitAnimations();
-                    mDialog.dismiss();
-                } else {
-                    Log.w(TAG, "Action long-clicked while mDialog is null.");
-                }
-                return ((LongPressAction) action).onLongPress();
-            }
+        @Override
+        public void onClickItem(int position) {
+            getItem(position).onPress();
+        }
+
+        public boolean onLongClickItem(int position) {
             return false;
         }
 
-        private void onClickItem(int position) {
-            Action item = getItem(position);
-            if (!(item instanceof SilentModeTriStateAction)) {
-                if (mDialog != null) {
-                    // Usually clicking an item shuts down the phone, locks, or starts an activity.
-                    // We don't want to animate back into the power button when that happens, so we
-                    // disable the dialog animation before dismissing.
-                    mDialogTransitionAnimator.disableAllCurrentDialogsExitAnimations();
-                    mDialog.dismiss();
-                } else {
-                    Log.w(TAG, "Action clicked while mDialog is null.");
-                }
-                item.onPress();
-            }
+        @Override
+        public boolean shouldBeSeparated(int position) {
+            return false;
         }
     }
 
@@ -1969,6 +2000,31 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
 
         public void updateState(ToggleState state) {
             mState = state;
+        }
+    }
+
+    /**
+     * A toggle action knows whether it is on or off, and displays an icon
+     * and status message accordingly.
+     */
+    private abstract class AdvancedAction extends SinglePressAction {
+        protected AdvancedAction(int iconResid, int messageResid) {
+            super(iconResid, messageResid);
+        }
+
+        @Override
+        public boolean showDuringKeyguard() {
+            return true;
+        }
+
+        @Override
+        public boolean showBeforeProvisioning() {
+            return true;
+        }
+
+        @Override
+        public boolean shouldBeSeparated() {
+            return true;
         }
     }
 
