@@ -6510,6 +6510,12 @@ public final class Settings {
         }
 
         /**
+         * Whether to display reboot in the power menu
+         * @hide
+         */
+        public static final String POWERMENU_ADVANCED = "powermenu_advanced";
+
+        /**
          * When to use Wi-Fi calling
          *
          * @see android.telephony.TelephonyManager.WifiCallingChoices
