@@ -53,7 +53,6 @@ public class PropImitationHooks {
     private static final String PACKAGE_EMOJIWALLPAPER = "com.google.android.apps.emojiwallpaper";
 
     private static final String PACKAGE_FINSKY = "com.android.vending";
-    private static final String PACKAGE_GBOARD = "com.google.android.inputmethod.latin";
     private static final String PACKAGE_GMS = "com.google.android.gms";
     private static final String PACKAGE_LIVEWALLPAPER = "com.google.pixel.livewallpaper";
 
@@ -165,7 +164,6 @@ public class PropImitationHooks {
 		|| packageName.equals(PACKAGE_SUBSCRIPTION_RED)
 		|| packageName.equals(PACKAGE_TURBO)
                 || packageName.equals(PACKAGE_ASI)
-		|| packageName.equals(PACKAGE_GBOARD)
                 || packageName.equals(PACKAGE_AIWALLPAPERS)
 		|| packageName.equals(PACKAGE_ASSISTANT)
 		|| packageName.equals(PACKAGE_EMOJIWALLPAPER)
