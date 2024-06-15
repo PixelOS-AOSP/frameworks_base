@@ -673,7 +673,7 @@ class AppErrors {
                 return;
             }
 
-            // Add paste content for Memochō option
+            // Add paste content for MkrBin option
             data.paste = "time: " + timeMillis + "\n" +
                     "msg: " + longMsg + "\n" +
                     "stacktrace: " + stackTrace;
