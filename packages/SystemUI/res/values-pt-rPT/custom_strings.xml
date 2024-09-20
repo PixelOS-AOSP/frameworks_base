@@ -25,7 +25,7 @@
     <string name="quick_settings_usb_tether_label">Partilha de Internet por USB</string>
     <!-- PowerShare QS tile -->
     <string name="quick_settings_powershare_label">Carregamento reverso sem fios</string>
-    <string name="quick_settings_powershare_off_powersave_label">Wireless PowerShare desligado\nPoupança de energia</string>
+    <string name="quick_settings_powershare_off_powersave_label">Wireless PowerShare desligado\nPoupança de bateria</string>
     <string name="quick_settings_powershare_off_low_battery_label">Wireless PowerShare desligado\nBateria demasiado fraca</string>
     <string name="quick_settings_powershare_enabled_label">Wireless PowerShare está ativado</string>
     <!-- QuickSettings: InternetDialog: Summary for how many devices are connected to the hotspot [CHAR LIMIT=NONE] -->
@@ -45,7 +45,7 @@
     <!-- Name of the VPN status bar icon. -->
     <string name="status_bar_vpn">VPN</string>
     <!-- Name of the roaming status bar icon. -->
-    <string name="status_bar_roaming">Roaming indicator</string>
+    <string name="status_bar_roaming">Indicador de Roaming</string>
     <!-- Name of the data saver status bar icon. -->
-    <string name="status_bar_data_saver">Data saver</string>
+    <string name="status_bar_data_saver">Poupança de dados</string>
 </resources>

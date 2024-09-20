@@ -12,15 +12,15 @@
     <string name="quick_settings_autobrightness_label">Luminozitate automată</string>
     <!-- Caffeine tile -->
     <string name="quick_settings_caffeine_label">Cofeină</string>
-    <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
-    <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
+    <string name="accessibility_quick_settings_caffeine_off">Cofeină oprită</string>
+    <string name="accessibility_quick_settings_caffeine_on">Cofeină pornită</string>
     <!-- Heads up QS tile -->
     <string name="quick_settings_heads_up_label">Atenționare</string>
     <string name="accessibility_quick_settings_heads_up_off">Atenționări dezactivate.</string>
     <string name="accessibility_quick_settings_heads_up_on">Atenționări activate.</string>
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">AOD</string>
-    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <string name="quick_settings_aod_label">Afișaj ambiental</string>
+    <string name="quick_settings_aod_off_powersave_label">Afișaj ambiental oprit\nEconomisire energie</string>
     <!-- USB tethering QS tile -->
     <string name="quick_settings_usb_tether_label">Tethering prin USB</string>
     <!-- PowerShare QS tile -->
@@ -40,13 +40,13 @@
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">Interfață sistem</string>
     <!-- Text while recognizing face -->
-    <string name="face_unlock_recognizing">Recognizing face...</string>
+    <string name="face_unlock_recognizing">Se recunoaște fața...</string>
     <!-- Status bar -->
     <string name="status_bar_icons_title">Pictograme bară de stare</string>
     <!-- Name of the VPN status bar icon. -->
     <string name="status_bar_vpn">VPN</string>
     <!-- Name of the roaming status bar icon. -->
-    <string name="status_bar_roaming">Roaming indicator</string>
+    <string name="status_bar_roaming">Indicator roaming</string>
     <!-- Name of the data saver status bar icon. -->
-    <string name="status_bar_data_saver">Data saver</string>
+    <string name="status_bar_data_saver">Economizor date</string>
 </resources>
