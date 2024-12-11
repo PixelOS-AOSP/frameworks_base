@@ -74,6 +74,7 @@ import android.app.ActivityManagerInternal;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentProvider;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -84,6 +85,7 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.graphics.Region;
 import android.hardware.display.DisplayManagerInternal;
 import android.hardware.input.InputManager;
@@ -204,6 +206,7 @@ import java.lang.annotation.Target;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -423,6 +426,8 @@ public final class InputMethodManagerService implements IInputMethodManagerImpl.
     @SharedByAllUsersField
     private final UserDataRepository mUserDataRepository;
 
+    @MultiUserUnawareField
+    final SettingsObserver mSettingsObserver;
     final WindowManagerInternal mWindowManagerInternal;
     private final ActivityManagerInternal mActivityManagerInternal;
     final PackageManagerInternal mPackageManagerInternal;
@@ -470,6 +475,55 @@ public final class InputMethodManagerService implements IInputMethodManagerImpl.
     @SharedByAllUsersField
     private IntArray mStylusIds;
 
+    private LineageHardwareManager mLineageHardware;
+
+    class SettingsObserver extends ContentObserver {
+        /**
+         * <em>This constructor must be called within the lock.</em>
+         */
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void registerContentObserverForAllUsers() {
+            ContentResolver resolver = mContext.getContentResolver();
+            if (mLineageHardware.isSupported(
+                    LineageHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY)) {
+                resolver.registerContentObserverAsUser(Settings.System.getUriFor(
+                        Settings.System.HIGH_TOUCH_SENSITIVITY_ENABLE),
+                        false, this, UserHandle.ALL);
+            }
+            if (mLineageHardware.isSupported(LineageHardwareManager.FEATURE_TOUCH_HOVERING)) {
+                resolver.registerContentObserverAsUser(Settings.Secure.getUriFor(
+                        Settings.Secure.FEATURE_TOUCH_HOVERING),
+                        false, this, UserHandle.ALL);
+            }
+        }
+
+        @Override
+        public void onChange(boolean selfChange, @NonNull Collection<Uri> uris, int flags,
+                @UserIdInt int userId) {
+            uris.forEach(uri -> onChangeInternal(uri, userId));
+        }
+
+        private void onChangeInternal(@NonNull Uri uri, @UserIdInt int userId) {
+            final Uri touchSensitivityUri = Settings.System.getUriFor(
+                    Settings.System.HIGH_TOUCH_SENSITIVITY_ENABLE);
+            final Uri touchHoveringUri = Settings.Secure.getUriFor(
+                    Settings.Secure.FEATURE_TOUCH_HOVERING);
+            synchronized (ImfLock.class) {
+                if (!mConcurrentMultiUserModeEnabled && mCurrentImeUserId != userId) {
+                    return;
+                }
+                if (touchSensitivityUri.equals(uri)) {
+                    updateTouchSensitivity();
+                } else if (touchHoveringUri.equals(uri)) {
+                    updateTouchHovering();
+                }
+            }
+        }
+    }
+
     private final ImeTracing.ServiceDumper mDumper = new ImeTracing.ServiceDumper() {
         /**
          * {@inheritDoc}
@@ -479,8 +533,6 @@ public final class InputMethodManagerService implements IInputMethodManagerImpl.
             dumpDebug(proto, InputMethodManagerServiceTraceProto.INPUT_METHOD_MANAGER_SERVICE);
         }
     };
-
-    private LineageHardwareManager mLineageHardware;
 
     static class SessionState {
         final ClientState mClient;
@@ -1242,6 +1294,8 @@ public final class InputMethodManagerService implements IInputMethodManagerImpl.
             mIoHandler = ioHandler;
             SystemLocaleWrapper.onStart(context, this::onActionLocaleChanged, mIoHandler);
             mImeTrackerService = new ImeTrackerService(mHandler);
+            // Note: SettingsObserver doesn't register observers in its constructor.
+            mSettingsObserver = new SettingsObserver(mHandler);
             mWindowManagerInternal = LocalServices.getService(WindowManagerInternal.class);
             mActivityManagerInternal = LocalServices.getService(ActivityManagerInternal.class);
             mPackageManagerInternal = LocalServices.getService(PackageManagerInternal.class);
@@ -1501,6 +1555,7 @@ public final class InputMethodManagerService implements IInputMethodManagerImpl.
                 }
 
                 mMyPackageMonitor.register(mContext, UserHandle.ALL, mIoHandler);
+                mSettingsObserver.registerContentObserverForAllUsers();
                 SecureSettingsChangeCallback.register(mHandler, mContext.getContentResolver(),
                         new String[] {
                                 Settings.Secure.ACCESSIBILITY_SOFT_KEYBOARD_MODE,
