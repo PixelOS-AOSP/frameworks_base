@@ -16,10 +16,10 @@
 
 package com.android.systemui.screenshot;
 
-import static com.android.systemui.screenshot.ScreenshotController.EXTRA_ACTION_TYPE;
-import static com.android.systemui.screenshot.ScreenshotController.EXTRA_ID;
-import static com.android.systemui.screenshot.ScreenshotController.EXTRA_SMART_ACTIONS_ENABLED;
-import static com.android.systemui.screenshot.ScreenshotController.SCREENSHOT_URI_ID;
+import static com.android.systemui.screenshot.SmartActionsReceiver.EXTRA_ACTION_TYPE;
+import static com.android.systemui.screenshot.SmartActionsReceiver.EXTRA_ID;
+import static com.android.systemui.screenshot.SmartActionsReceiver.EXTRA_SMART_ACTIONS_ENABLED;
+import static com.android.systemui.screenshot.LegacyScreenshotController.SCREENSHOT_URI_ID;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
