@@ -93,8 +93,8 @@ public class PropImitationHooks {
             "MANUFACTURER", "Google",
             "BRAND", "google",
             "MODEL", "Pixel 9 Pro",
-            "ID", "AD1A.240905.004",
-            "FINGERPRINT", "google/caiman/caiman:14/AD1A.240905.004/12196292:user/release-keys"
+            "ID", "BP1A.250305.020",
+            "FINGERPRINT", "google/caiman/caiman:15/BP1A.250305.020/13009785:user/release-keys"
     );
 
     private static final Map<String, String> sPixelFiveProps = Map.of(
@@ -104,8 +104,8 @@ public class PropImitationHooks {
             "MANUFACTURER", "Google",
             "BRAND", "google",
             "MODEL", "Pixel 5a",
-            "ID", "AP2A.240805.004",
-            "FINGERPRINT", "google/barbet/barbet:14/AP2A.240805.005/12025142:user/release-keys"
+            "ID", "AP2A.240805.005.S4",
+            "FINGERPRINT", "google/barbet/barbet:14/AP2A.240805.005.S4/12281092:user/release-keys"
     );
 
     private static final Map<String, String> sPixelTabletProps = Map.of(
@@ -115,8 +115,8 @@ public class PropImitationHooks {
             "MANUFACTURER", "Google",
             "BRAND", "google",
             "MODEL", "Pixel Tablet",
-            "ID", "AP2A.240905.003",
-            "FINGERPRINT", "google/tangorpro/tangorpro:14/AP2A.240905.003/12231197:user/release-keys"
+            "ID", "BP1A.250305.020.T2",
+            "FINGERPRINT", "google/tangorpro/tangorpro:15/BP1A.250305.020.T2/13023825:user/release-keys"
     );
 
     private static final Map<String, String> sPixelXLProps = Map.of(
