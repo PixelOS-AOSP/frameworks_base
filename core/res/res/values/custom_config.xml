@@ -35,9 +35,6 @@
     <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
     <string name="config_netflixSpoofModel" translatable="false"></string>
 
-    <!-- Whether to spoof GMS as Pixel Tablet -->
-    <bool name="config_spoofasTablet">false</bool>
-
     <!-- Whether charging control should be enabled by default -->
     <bool name="config_chargingControlEnabled">false</bool>
     <!-- Default charging control mode.

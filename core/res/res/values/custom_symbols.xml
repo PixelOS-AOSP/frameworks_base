@@ -19,7 +19,6 @@
     <java-symbol type="array" name="config_certifiedBuildProperties" />
     <java-symbol type="string" name="config_stockFingerprint" />
     <java-symbol type="string" name="config_netflixSpoofModel" />
-    <java-symbol type="bool" name="config_spoofasTablet" />
 
     <!-- App error dialog -->
      <java-symbol type="id" name="aerr_copy" />
