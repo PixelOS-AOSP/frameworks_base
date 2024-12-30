@@ -1043,12 +1043,12 @@ public class DisplayModeDirector {
             final ContentResolver cr = mContext.getContentResolver();
             mInjector.registerPeakRefreshRateObserver(cr, this);
             mInjector.registerMinRefreshRateObserver(cr, this);
-            cr.registerContentObserver(mLowPowerModeSetting, false /*notifyDescendants*/, this,
-                    UserHandle.USER_ALL);
             cr.registerContentObserver(mLowPowerModeSetting, /* notifyDescendants= */ false, this,
                     UserHandle.USER_ALL);
             cr.registerContentObserver(mMatchContentFrameRateSetting,
                     /* notifyDescendants= */ false, this, UserHandle.USER_ALL);
+            cr.registerContentObserver(mLowPowerRefreshRateSetting,
+                    /* notifyDescendants= */ false, this, UserHandle.USER_SYSTEM);
             mInjector.registerDisplayListener(mDisplayListener, mHandler);
 
             float deviceConfigDefaultPeakRefresh =
