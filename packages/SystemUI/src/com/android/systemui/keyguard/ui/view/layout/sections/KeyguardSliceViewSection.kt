@@ -17,6 +17,7 @@
 
 package com.android.systemui.keyguard.ui.view.layout.sections
 
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.Barrier
@@ -32,6 +33,7 @@ import javax.inject.Inject
 class KeyguardSliceViewSection
 @Inject
 constructor(
+    private val context: Context,
     val smartspaceController: LockscreenSmartspaceController,
 ) : KeyguardSection() {
     override fun addViews(constraintLayout: ConstraintLayout) {
@@ -54,8 +56,10 @@ constructor(
             connect(
                 R.id.keyguard_slice_view,
                 ConstraintSet.START,
-                R.id.lockscreen_clock_view,
-                ConstraintSet.START
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.START,
+                context.resources.getDimensionPixelSize(customR.dimen.clock_padding_start) +
+                    context.resources.getDimensionPixelSize(R.dimen.status_view_margin_horizontal),
             )
             connect(
                 R.id.keyguard_slice_view,
