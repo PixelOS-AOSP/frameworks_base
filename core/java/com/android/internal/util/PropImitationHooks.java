@@ -90,15 +90,15 @@ public class PropImitationHooks {
     private static final Boolean sDisableKeyAttestationBlock = SystemProperties.getBoolean(
         "persist.sys.pihooks.disable.gms_key_attestation_block", false);
 
-    private static final Map<String, String> sPixelNineProps = Map.of(
-            "PRODUCT", "caiman",
-            "DEVICE", "caiman",
-            "HARDWARE", "caiman",
+    private static final Map<String, String> sPixelNineXLProps = Map.of(
+            "PRODUCT", "komodo",
+            "DEVICE", "komodo",
+            "HARDWARE", "komodo",
             "MANUFACTURER", "Google",
             "BRAND", "google",
-            "MODEL", "Pixel 9 Pro",
+            "MODEL", "Pixel 9 Pro XL",
             "ID", "BP1A.250305.020",
-            "FINGERPRINT", "google/caiman/caiman:15/BP1A.250305.020/13009785:user/release-keys"
+            "FINGERPRINT", "google/komodo/komodo:15/BP1A.250305.020/13009785:user/release-keys"
     );
 
     private static final Map<String, String> sPixelFiveProps = Map.of(
@@ -246,8 +246,8 @@ public class PropImitationHooks {
                     dlog("Spoofing Pixel Tablet for: " + packageName + " process: " + processName);
                     setProps(sPixelTabletProps);
                 } else {
-                    dlog("Spoofing Pixel 9 Pro for: " + packageName + " process: " + processName);
-                    setProps(sPixelNineProps);
+                    dlog("Spoofing Pixel 9 Pro XL for: " + packageName + " process: " + processName);
+                    setProps(sPixelNineXLProps);
                 }
                 return;
             case PACKAGE_GPHOTOS:
