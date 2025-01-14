@@ -246,4 +246,9 @@ interface IStatusBarService
      * Toggles flashlight of the device
      */
     void toggleCameraFlash();
+
+    /**
+     * Toggle recent apps.
+     */
+    void toggleRecentApps();
 }
