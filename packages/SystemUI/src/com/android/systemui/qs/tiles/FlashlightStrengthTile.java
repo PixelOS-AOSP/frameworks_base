@@ -256,15 +256,18 @@ public class FlashlightStrengthTile extends FlashlightTile implements SlideableQ
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
         super.handleUpdateState(state, arg);
-        if (mSupportsSettingFlashLevel) {
-            String label = mHost.getContext().getString(R.string.quick_settings_flashlight_label);
-            if (state.value) {
-                label = String.format(
-                        "%s - %s%%",
-                        mHost.getContext().getString(R.string.quick_settings_flashlight_label),
-                        Math.round(mCurrentPercent * 100f));
-            }
-            state.label = label;
+
+        if (!mSupportsSettingFlashLevel) {
+            return;
+        }
+
+        state.secondaryLabel = "";
+        state.stateDescription = "";
+
+        if (state.value) {
+            int percentage = Math.round(mCurrentPercent * 100f);
+            state.secondaryLabel = String.format("On - %d%%", percentage);
+            state.stateDescription = state.secondaryLabel;
         }
     }
 
