@@ -66,6 +66,7 @@ interface StatusBarInitializer : CoreStartable {
 
     interface OnStatusBarViewUpdatedListener {
         fun onStatusBarViewUpdated(
+            statusBarView: PhoneStatusBarView,
             statusBarViewController: PhoneStatusBarViewController,
             statusBarTransitions: PhoneStatusBarTransitions,
         )
@@ -167,6 +168,7 @@ constructor(
                             (fragment as CollapsedStatusBarFragment).homeStatusBarComponent
                                 ?: throw IllegalStateException()
                         statusBarViewUpdatedListener?.onStatusBarViewUpdated(
+                            component!!..phoneStatusBarView,
                             component!!.phoneStatusBarViewController,
                             component!!.phoneStatusBarTransitions,
                         )
