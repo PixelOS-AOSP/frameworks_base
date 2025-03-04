@@ -325,7 +325,7 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
         mMetricsLogger.write(populate(new LogMaker(category).setType(TYPE_ACTION)
                 .addTaggedData(FIELD_STATUS_BAR_STATE, mStatusBarStateController.getState())));
         mUiEventLogger.logWithInstanceId(event, 0, getMetricsSpec(), getInstanceId());
-        if (!keyguardManager.isKeyguardLocked() ||
+        if (!keyguardManager.isDeviceLocked() ||
                 Settings.Secure.getInt(mContext.getContentResolver(),
                 Settings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 1) == 1) {
             mHandler.obtainMessage(message, eventId, 0, expandable).sendToTarget();
