@@ -43,11 +43,6 @@ import vendor.lineage.livedisplay.V2_0.IPictureAdjustment;
 import vendor.lineage.livedisplay.V2_0.IReadingEnhancement;
 import vendor.lineage.livedisplay.V2_0.ISunlightEnhancement;
 import vendor.lineage.livedisplay.V2_1.IAntiFlicker;
-import vendor.lineage.touch.V1_0.IGloveMode;
-import vendor.lineage.touch.V1_0.IHighTouchPollingRate;
-import vendor.lineage.touch.V1_0.IKeyDisabler;
-import vendor.lineage.touch.V1_0.IStylusMode;
-import vendor.lineage.touch.V1_0.ITouchscreenGesture;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.IllegalArgumentException;
@@ -186,6 +181,8 @@ public final class LineageHardwareManager {
     private final ArrayMap<String, String> mDisplayModeMappings = new ArrayMap<String, String>();
     private final boolean mFilterDisplayModes;
 
+    // AIDL hals
+    private HashMap<Integer, IBinder> mAIDLMap = new HashMap<Integer, IBinder>();
     // HIDL hals
     private HashMap<Integer, IBase> mHIDLMap = new HashMap<Integer, IBase>();
 
@@ -254,7 +251,15 @@ public final class LineageHardwareManager {
      * @return true if the feature is supported, false otherwise.
      */
     public boolean isSupported(int feature) {
-        return isSupportedHIDL(feature) || isSupportedLegacy(feature);
+        return isSupportedAIDL(feature) || isSupportedHIDL(feature) || isSupportedLegacy(feature);
+    }
+
+
+    private boolean isSupportedAIDL(int feature) {
+        if (!mAIDLMap.containsKey(feature)) {
+            mAIDLMap.put(feature, getAIDLService(feature));
+        }
+        return mAIDLMap.get(feature) != null;
     }
 
     private boolean isSupportedHIDL(int feature) {
@@ -274,19 +279,40 @@ public final class LineageHardwareManager {
         return false;
     }
 
+    private IBinder getAIDLService(int feature) {
+        switch (feature) {
+            case FEATURE_HIGH_TOUCH_POLLING_RATE:
+                return ServiceManager.waitForDeclaredService(
+                        vendor.lineage.touch.IHighTouchPollingRate.DESCRIPTOR + "/default");
+            case FEATURE_HIGH_TOUCH_SENSITIVITY:
+                return ServiceManager.waitForDeclaredService(
+                        vendor.lineage.touch.IGloveMode.DESCRIPTOR + "/default");
+            case FEATURE_KEY_DISABLE:
+                return ServiceManager.waitForDeclaredService(
+                        vendor.lineage.touch.IKeyDisabler.DESCRIPTOR + "/default");
+            case FEATURE_TOUCH_HOVERING:
+                return ServiceManager.waitForDeclaredService(
+                        vendor.lineage.touch.IStylusMode.DESCRIPTOR + "/default");
+            case FEATURE_TOUCHSCREEN_GESTURES:
+                return ServiceManager.waitForDeclaredService(
+                        vendor.lineage.touch.ITouchscreenGesture.DESCRIPTOR + "/default");
+        }
+        return null;
+    }
+
     private IBase getHIDLService(int feature) {
         try {
             switch (feature) {
                 case FEATURE_HIGH_TOUCH_POLLING_RATE:
-                    return IHighTouchPollingRate.getService(true);
+                    return vendor.lineage.touch.V1_0.IHighTouchPollingRate.getService(true);
                 case FEATURE_HIGH_TOUCH_SENSITIVITY:
-                    return IGloveMode.getService(true);
+                    return vendor.lineage.touch.V1_0.IGloveMode.getService(true);
                 case FEATURE_KEY_DISABLE:
-                    return IKeyDisabler.getService(true);
+                    return vendor.lineage.touch.V1_0.IKeyDisabler.getService(true);
                 case FEATURE_TOUCH_HOVERING:
-                    return IStylusMode.getService(true);
+                    return vendor.lineage.touch.V1_0.IStylusMode.getService(true);
                 case FEATURE_TOUCHSCREEN_GESTURES:
-                    return ITouchscreenGesture.getService(true);
+                    return vendor.lineage.touch.V1_0.ITouchscreenGesture.getService(true);
                 case FEATURE_ADAPTIVE_BACKLIGHT:
                     return IAdaptiveBacklight.getService(true);
                 case FEATURE_ANTI_FLICKER:
@@ -348,20 +374,44 @@ public final class LineageHardwareManager {
         }
 
         try {
-            if (isSupportedHIDL(feature)) {
+            if (isSupportedAIDL(feature)) {
+                IBinder b = mAIDLMap.get(feature);
+                switch (feature) {
+                    case FEATURE_HIGH_TOUCH_POLLING_RATE:
+                        vendor.lineage.touch.IHighTouchPollingRate highTouchPollingRate =
+                                vendor.lineage.touch.IHighTouchPollingRate.Stub.asInterface(b);
+                        return highTouchPollingRate.getEnabled();
+                    case FEATURE_HIGH_TOUCH_SENSITIVITY:
+                        vendor.lineage.touch.IGloveMode gloveMode =
+                                vendor.lineage.touch.IGloveMode.Stub.asInterface(b);
+                        return gloveMode.getEnabled();
+                    case FEATURE_KEY_DISABLE:
+                        vendor.lineage.touch.IKeyDisabler keyDisabler =
+                                vendor.lineage.touch.IKeyDisabler.Stub.asInterface(b);
+                        return keyDisabler.getEnabled();
+                    case FEATURE_TOUCH_HOVERING:
+                        vendor.lineage.touch.IStylusMode stylusMode =
+                                vendor.lineage.touch.IStylusMode.Stub.asInterface(b);
+                        return stylusMode.getEnabled();
+                }
+            } else if (isSupportedHIDL(feature)) {
                 IBase obj = mHIDLMap.get(feature);
                 switch (feature) {
                     case FEATURE_HIGH_TOUCH_POLLING_RATE:
-                        IHighTouchPollingRate highTouchPollingRate = (IHighTouchPollingRate) obj;
+                        vendor.lineage.touch.V1_0.IHighTouchPollingRate highTouchPollingRate =
+                                (vendor.lineage.touch.V1_0.IHighTouchPollingRate) obj;
                         return highTouchPollingRate.isEnabled();
                     case FEATURE_HIGH_TOUCH_SENSITIVITY:
-                        IGloveMode gloveMode = (IGloveMode) obj;
+                        vendor.lineage.touch.V1_0.IGloveMode gloveMode =
+                                (vendor.lineage.touch.V1_0.IGloveMode) obj;
                         return gloveMode.isEnabled();
                     case FEATURE_KEY_DISABLE:
-                        IKeyDisabler keyDisabler = (IKeyDisabler) obj;
+                        vendor.lineage.touch.V1_0.IKeyDisabler keyDisabler =
+                                (vendor.lineage.touch.V1_0.IKeyDisabler) obj;
                         return keyDisabler.isEnabled();
                     case FEATURE_TOUCH_HOVERING:
-                        IStylusMode stylusMode = (IStylusMode) obj;
+                        vendor.lineage.touch.V1_0.IStylusMode stylusMode =
+                                (vendor.lineage.touch.V1_0.IStylusMode) obj;
                         return stylusMode.isEnabled();
                     case FEATURE_ADAPTIVE_BACKLIGHT:
                         IAdaptiveBacklight adaptiveBacklight = (IAdaptiveBacklight) obj;
@@ -385,7 +435,7 @@ public final class LineageHardwareManager {
             } else if (checkService()) {
                 return sService.get(feature);
             }
-        } catch (RemoteException e) {
+        } catch (Exception e) {
         }
         return false;
     }
@@ -406,20 +456,50 @@ public final class LineageHardwareManager {
         }
 
         try {
+            if (isSupportedAIDL(feature)) {
+                IBinder b = mAIDLMap.get(feature);
+                switch (feature) {
+                    case FEATURE_HIGH_TOUCH_POLLING_RATE:
+                        vendor.lineage.touch.IHighTouchPollingRate highTouchPollingRate =
+                                vendor.lineage.touch.IHighTouchPollingRate.Stub.asInterface(b);
+                        highTouchPollingRate.setEnabled(enable);
+                        break;
+                    case FEATURE_HIGH_TOUCH_SENSITIVITY:
+                        vendor.lineage.touch.IGloveMode gloveMode =
+                                vendor.lineage.touch.IGloveMode.Stub.asInterface(b);
+                        gloveMode.setEnabled(enable);
+                        break;
+                    case FEATURE_KEY_DISABLE:
+                        vendor.lineage.touch.IKeyDisabler keyDisabler =
+                                vendor.lineage.touch.IKeyDisabler.Stub.asInterface(b);
+                        keyDisabler.setEnabled(enable);
+                        break;
+                    case FEATURE_TOUCH_HOVERING:
+                        vendor.lineage.touch.IStylusMode stylusMode =
+                                vendor.lineage.touch.IStylusMode.Stub.asInterface(b);
+                        stylusMode.setEnabled(enable);
+                        break;
+                }
+                return enable;
+            }
             if (isSupportedHIDL(feature)) {
                 IBase obj = mHIDLMap.get(feature);
                 switch (feature) {
                     case FEATURE_HIGH_TOUCH_POLLING_RATE:
-                        IHighTouchPollingRate highTouchPollingRate = (IHighTouchPollingRate) obj;
+                        vendor.lineage.touch.V1_0.IHighTouchPollingRate highTouchPollingRate =
+                                (vendor.lineage.touch.V1_0.IHighTouchPollingRate) obj;
                         return highTouchPollingRate.setEnabled(enable);
                     case FEATURE_HIGH_TOUCH_SENSITIVITY:
-                        IGloveMode gloveMode = (IGloveMode) obj;
+                        vendor.lineage.touch.V1_0.IGloveMode gloveMode =
+                                (vendor.lineage.touch.V1_0.IGloveMode) obj;
                         return gloveMode.setEnabled(enable);
                     case FEATURE_KEY_DISABLE:
-                        IKeyDisabler keyDisabler = (IKeyDisabler) obj;
+                        vendor.lineage.touch.V1_0.IKeyDisabler keyDisabler =
+                                (vendor.lineage.touch.V1_0.IKeyDisabler) obj;
                         return keyDisabler.setEnabled(enable);
                     case FEATURE_TOUCH_HOVERING:
-                        IStylusMode stylusMode = (IStylusMode) obj;
+                        vendor.lineage.touch.V1_0.IStylusMode stylusMode =
+                                (vendor.lineage.touch.V1_0.IStylusMode) obj;
                         return stylusMode.setEnabled(enable);
                     case FEATURE_ADAPTIVE_BACKLIGHT:
                         IAdaptiveBacklight adaptiveBacklight = (IAdaptiveBacklight) obj;
@@ -443,7 +523,7 @@ public final class LineageHardwareManager {
             } else if (checkService()) {
                 return sService.set(feature, enable);
             }
-        } catch (RemoteException e) {
+        } catch (Exception e) {
         }
         return false;
     }
@@ -453,12 +533,19 @@ public final class LineageHardwareManager {
      */
     public TouchscreenGesture[] getTouchscreenGestures() {
         try {
+            if (isSupportedAIDL(FEATURE_TOUCHSCREEN_GESTURES)) {
+                vendor.lineage.touch.ITouchscreenGesture touchscreenGesture =
+                        vendor.lineage.touch.ITouchscreenGesture.Stub.asInterface(
+                                mAIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES));
+                return AIDLHelper.fromAIDLGestures(touchscreenGesture.getSupportedGestures());
+            }
             if (isSupportedHIDL(FEATURE_TOUCHSCREEN_GESTURES)) {
-                ITouchscreenGesture touchscreenGesture = (ITouchscreenGesture)
-                        mHIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES);
+                vendor.lineage.touch.V1_0.ITouchscreenGesture touchscreenGesture =
+                        (vendor.lineage.touch.V1_0.ITouchscreenGesture)
+                                mHIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES);
                 return HIDLHelper.fromHIDLGestures(touchscreenGesture.getSupportedGestures());
             }
-        } catch (RemoteException e) {
+        } catch (Exception e) {
         }
         return null;
     }
@@ -469,13 +556,21 @@ public final class LineageHardwareManager {
     public boolean setTouchscreenGestureEnabled(
             TouchscreenGesture gesture, boolean state) {
         try {
+            if (isSupportedAIDL(FEATURE_TOUCHSCREEN_GESTURES)) {
+                vendor.lineage.touch.ITouchscreenGesture touchscreenGesture =
+                        vendor.lineage.touch.ITouchscreenGesture.Stub.asInterface(
+                                mAIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES));
+                touchscreenGesture.setGestureEnabled(AIDLHelper.toAIDLGesture(gesture), state);
+                return true;
+            }
             if (isSupportedHIDL(FEATURE_TOUCHSCREEN_GESTURES)) {
-                ITouchscreenGesture touchscreenGesture = (ITouchscreenGesture)
-                        mHIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES);
+                vendor.lineage.touch.V1_0.ITouchscreenGesture touchscreenGesture =
+                        (vendor.lineage.touch.V1_0.ITouchscreenGesture)
+                                mHIDLMap.get(FEATURE_TOUCHSCREEN_GESTURES);
                 return touchscreenGesture.setGestureEnabled(
                         HIDLHelper.toHIDLGesture(gesture), state);
             }
-        } catch (RemoteException e) {
+        } catch (Exception e) {
         }
         return false;
     }
