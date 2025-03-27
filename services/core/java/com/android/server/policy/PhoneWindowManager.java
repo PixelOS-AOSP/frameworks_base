@@ -5345,7 +5345,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final boolean isNavBarVirtKey = ((event.getFlags() & KeyEvent.FLAG_VIRTUAL_HARD_KEY) != 0);
         boolean useHapticFeedback = down
                 && (policyFlags & WindowManagerPolicy.FLAG_VIRTUAL) != 0
-                && (!isNavBarVirtKey || mNavBarVirtualKeyHapticFeedbackEnabled)
+                && (!isNavBarVirtKey || mNavBarVirtualKeyHapticFeedbackEnabled ||
+                        event.getDeviceId() > 0)
                 && event.getRepeatCount() == 0;
 
         // Handle special keys.
