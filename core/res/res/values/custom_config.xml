@@ -15,6 +15,26 @@
          causes a poor experience. -->
     <bool name="config_fingerprintWakeAndUnlock">true</bool>
 
+    <!-- Build properties from a GMS certified device against current platform SPL level -->
+    <string-array name="config_certifiedBuildProperties" translatable="false">
+      <!--
+        Each entry must be of the format
+            FIELD:value
+        with the field belonging to android.os.Build or android.os.Build.VERSION class.
+        Example:
+        <item>BRAND:foo</item>
+        <item>DEVICE:bar</item>
+        <item>FINGERPRINT:foo/bar/bar:1.0/lorem/ipsum:dolor/sit-amet</item>
+        <item>VERSION.RELEASE:1.0</item>
+      -->
+    </string-array>
+
+    <!-- Build fingerprint from stock ROM -->
+    <string name="config_stockFingerprint" translatable="false"></string>
+
+    <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
+    <string name="config_netflixSpoofModel" translatable="false"></string>
+
     <!-- Whether charging control should be enabled by default -->
     <bool name="config_chargingControlEnabled">false</bool>
     <!-- Default charging control mode.
