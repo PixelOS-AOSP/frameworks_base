@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">Утримуйте &amp; перетягніть або торкніться, щоб додати плитки</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Автояскравість</string>
+    <!-- Caffeine tile -->
+    <string name="quick_settings_caffeine_label">Режим \"Заборона сну\"</string>
+    <string name="accessibility_quick_settings_caffeine_off">Режим \"Заборона сну\" вимкнено</string>
+    <string name="accessibility_quick_settings_caffeine_on">Режим \"Заборона сну\" увімкнено</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">Змінити Sim-карту для передачі даних</string>
+    <string name="qs_data_switch_toast_0">Зараз не вставлено жодної SIM картки</string>
+    <string name="qs_data_switch_toast_1">Наразі вставлено лише одну SIM-картку</string>
+    <string name="qs_data_switch_text_1">SIM 1</string>
+    <string name="qs_data_switch_text_2">SIM 2</string>
+    <string name="qs_data_switch_changed_1">Змінено картку даних на SIM 1.</string>
+    <string name="qs_data_switch_changed_2">Змінено картку даних на SIM 2.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Спливаючі сповіщення</string>
+    <string name="accessibility_quick_settings_heads_up_off">Спливаючі сповіщення вимкнуті.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Спливаючі сповіщення увімкнуті.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD вимкнено\nЕкономія батареї</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB-модем</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">Бездротовий PowerShare</string>
+    <string name="quick_settings_powershare_off_powersave_label">Бездротовий PowerShare вимкнено\nЕкономія батареї</string>
+    <string name="quick_settings_powershare_off_low_battery_label">Бездротовий PowerShare вимкнено\nЗанадто низький заряд батареї</string>
+    <string name="quick_settings_powershare_enabled_label">Бездротовий PowerShare увімкнено</string>
+    <!-- Status bar -->
+    <string name="status_bar_icons_title">Іконки в статус барі</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">Індикатор роумінгу</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">Збереження трафіку</string>
+    <!-- Text while recognizing face -->
+    <string name="face_unlock_recognizing">Розпізнавання обличчя...</string>
+    <!-- Screenshot chip -->
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Видалити</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Видалити скріншот</string>
+    <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">Додатково</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <!-- Whether to briefly keep the display in ON state when transitioning from
+         DOZE_AOD_PAUSED to DOZE_AOD state. -->
+</resources>

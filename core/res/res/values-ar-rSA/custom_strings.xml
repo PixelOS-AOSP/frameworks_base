@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_title">الاسترداد</string>
+    <string name="reboot_to_recovery_message">إعادة التشغيل إلى الاسترداد</string>
+    <string name="reboot_to_bootloader_title">أداة تحميل التشغيل</string>
+    <string name="reboot_to_bootloader_message">إعادة التشغيل إلى أداة تحميل التشغيل</string>
+    <string name="reboot_title">إعادة التشغيل</string>
+    <string name="reboot_message">إعادة تشغيل النظام</string>
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">نسخ رابط سجل الأعطال</string>
+    <string name="url_copy_success">تم نسخ الرابط بنجاح</string>
+    <string name="url_copy_failed">حدث خطأ أثناء تحميل السجل إلى mkr/bin</string>
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">تلقائي</string>
+    <string name="live_display_auto_summary">ضبط درجة حرارة لون الشاشة تلقائياً بعد غروب الشمس وشروقها</string>
+    <string name="live_display_off">معطل</string>
+    <string name="live_display_off_summary">تعطيل كل التعديلات</string>
+    <string name="live_display_day">النهار</string>
+    <string name="live_display_day_summary">استخدام إعدادات النهار فقط</string>
+    <string name="live_display_night">الليل</string>
+    <string name="live_display_night_summary">استخدام إعدادات الليل فقط</string>
+    <string name="live_display_outdoor">خارج المنزل (شمس ساطعة)</string>
+    <string name="live_display_outdoor_summary">استخدم إعدادات خارج المنزل فقط</string>
+    <string name="live_display_hint">يمكن أن تساعد مِيزة الشاشة الحيّة في تقليل إجهاد العين ومساعدتك على النوم في الليل. انقر هنا لتجربتها!</string>
+    <string name="accessibility_quick_settings_live_display_off">الشاشة الحيّة معطلة</string>
+    <string name="accessibility_quick_settings_live_display_auto">الشاشة الحيّة: الوضع التلقائي</string>
+    <string name="accessibility_quick_settings_live_display_day">الشاشة الحيّة: وضع النهار</string>
+    <string name="accessibility_quick_settings_live_display_night">الشاشة الحيّة: وضع الليل</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">الشاشة الحيّة: وضع خارج المنزل</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">الشاشة الحيّة معطلة</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">تم تغيير الشاشة الحيّة للوضع التلقائي</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">تم تغيير الشاشة الحيّة لوضع النهار</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">تم تغيير الشاشة الحيّة لوضع الليل</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">تم تغيير الشاشة الحيّة لوضع خارج المنزل</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">التحكم في الشحن</string>
+    <string name="charging_control_notification_title">التحكم في الشحن</string>
+    <string name="charging_control_notification_cancel_once">إلغاء</string>
+    <string name="charging_control_notification_content_limit">سيتم شحن البطارية إلى %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">تم شحن البطارية إلى %1$d%%</string>
+    <string name="charging_control_notification_content_target">سيتم شحن البطارية بالكامل عند %1$s</string>
+    <string name="charging_control_notification_content_target_reached">تم شحن البطارية</string>
+    <!-- Cycle through ringer modes -->
+    <string name="volume_dialog_ringer_guidance_normal">سيتم رن الهاتف عند المكالمات والإشعارات</string>
+    <!-- Alert slider proc nodes paths. -->
+    <string name="alert_slider_state_path"></string>
+    <string name="alert_slider_uevent_match_path"></string>
+    <!-- Lock gesture -->
+    <string name="gesture_locked_warning">اسحب مرة أخرى لفتح الإيماءات</string>
+</resources>

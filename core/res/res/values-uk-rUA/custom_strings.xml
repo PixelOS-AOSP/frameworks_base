@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_title">Режим відновлення</string>
+    <string name="reboot_to_recovery_message">Перевантажити у режим відновлення</string>
+    <string name="reboot_to_bootloader_title">Режим bootloader</string>
+    <string name="reboot_to_bootloader_message">Перезавантаження у Bootloader</string>
+    <string name="reboot_title">Перезавантажити</string>
+    <string name="reboot_message">Перезавантаження системи</string>
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">Скопіювати URL на лог збою</string>
+    <string name="url_copy_success">URL успішно скопійовано</string>
+    <string name="url_copy_failed">Під час завантаження журналу в mkr/bin сталася помилка</string>
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Автоматично</string>
+    <string name="live_display_auto_summary">Автоматичне підлаштування температури кольору екрана після сходу та заходу сонця</string>
+    <string name="live_display_off">Вимкнути</string>
+    <string name="live_display_off_summary">Відключити всі коригування</string>
+    <string name="live_display_day">День</string>
+    <string name="live_display_day_summary">Використовувати тільки денні налаштування</string>
+    <string name="live_display_night">Ніч</string>
+    <string name="live_display_night_summary">Використовувати тільки нічні налаштування</string>
+    <string name="live_display_outdoor">Надворі (яскраве сонце)</string>
+    <string name="live_display_outdoor_summary">Використовувати тільки налаштування «Надворі»</string>
+    <string name="live_display_hint">LiveDisplay допоможе зменшити навантаження на зір та покращить ваш сон. Натисніть тут, щоб спробувати!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay вимкнено.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: авторежим.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: денний режим.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: нічний режим.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: режим «Надворі».</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay вимкнено.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay змінено авторежим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay змінено на денний режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay змінено на нічний режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay змінено на режим «Надворі».</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Контроль заряджання</string>
+    <string name="charging_control_notification_title">Контроль заряджання</string>
+    <string name="charging_control_notification_cancel_once">Скасувати</string>
+    <string name="charging_control_notification_content_limit">Акумулятор буде заряджено до %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Акумулятор заряджено до %1$d%%</string>
+    <string name="charging_control_notification_content_target">Акумулятор буде повністю заряджено о %1$s</string>
+    <string name="charging_control_notification_content_target_reached">Акумулятор заряджено</string>
+    <!-- Cycle through ringer modes -->
+    <string name="volume_dialog_ringer_guidance_normal">Звуковий сигнал для викликів і сповіщень увімкнено</string>
+    <!-- Alert slider proc nodes paths. -->
+    <string name="alert_slider_state_path"></string>
+    <string name="alert_slider_uevent_match_path"></string>
+    <!-- Lock gesture -->
+    <string name="gesture_locked_warning">Проведіть пальцем знову, щоб розблокувати</string>
+</resources>

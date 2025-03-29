@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">Чтобы изменить порядок элементов, перетащите их</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Адаптивная яркость</string>
+    <!-- Caffeine tile -->
+    <string name="quick_settings_caffeine_label">Кофеин</string>
+    <string name="accessibility_quick_settings_caffeine_off">Кофеин откл.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Кофеин вкл.</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">Переключить SIM-карту</string>
+    <string name="qs_data_switch_toast_0">В настоящее время SIM-карта не вставлена</string>
+    <string name="qs_data_switch_toast_1">В настоящее время вставлена только одна SIM-карта</string>
+    <string name="qs_data_switch_text_1">SIM 1</string>
+    <string name="qs_data_switch_text_2">SIM 2</string>
+    <string name="qs_data_switch_changed_1">Мобильный трафик переключён на SIM 1.</string>
+    <string name="qs_data_switch_changed_2">Мобильный трафик переключён на SIM 2.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Всплывающие уведомления</string>
+    <string name="accessibility_quick_settings_heads_up_off">Всплывающие уведомления откл.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления вкл.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD откл.\nРежим энергосбережения</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB-модем</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">Передача заряда батареи</string>
+    <string name="quick_settings_powershare_off_powersave_label">Передача заряда батареи выкл.\nРежим энергосбережения</string>
+    <string name="quick_settings_powershare_off_low_battery_label">Передача заряда батареи выкл.\nБатарея разряжена</string>
+    <string name="quick_settings_powershare_enabled_label">Передача заряда батареи вкл.</string>
+    <!-- Status bar -->
+    <string name="status_bar_icons_title">Иконки строки состояния</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">Индикатор роуминга</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">Экономия трафика</string>
+    <!-- Text while recognizing face -->
+    <string name="face_unlock_recognizing">Распознавание лица...</string>
+    <!-- Screenshot chip -->
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Удалить</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Удалить скриншот</string>
+    <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">Расширенная</string>
+    <string name="global_action_restart_recovery">Режим восстановления</string>
+    <string name="global_action_restart_bootloader">Режим загрузчика</string>
+    <string name="global_action_restart_ui">Оболочка системы</string>
+    <!-- Whether to briefly keep the display in ON state when transitioning from
+         DOZE_AOD_PAUSED to DOZE_AOD state. -->
+</resources>

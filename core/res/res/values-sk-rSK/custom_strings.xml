@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_title">Režim obnovy</string>
+    <string name="reboot_to_recovery_message">Reštartuje sa do režimu obnovy</string>
+    <string name="reboot_to_bootloader_title">Zavádzač</string>
+    <string name="reboot_to_bootloader_message">Reštartuje sa do zavádzača</string>
+    <string name="reboot_title">Reštartovať</string>
+    <string name="reboot_message">Reštartovanie systému</string>
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">Kopírovať URL adresu záznamu o chybe</string>
+    <string name="url_copy_success">URL úspešne skopírovaná</string>
+    <string name="url_copy_failed">Vyskytla sa chyba pri nahrávaní log súboru na mkr/bin</string>
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Automatický</string>
+    <string name="live_display_auto_summary">Automaticky upraviť teplotu farieb obrazovky po západe a východe slnka</string>
+    <string name="live_display_off">Vypnuté</string>
+    <string name="live_display_off_summary">Zakázať všetky úpravy</string>
+    <string name="live_display_day">Deň</string>
+    <string name="live_display_day_summary">Použiť iba nastavenia pre deň</string>
+    <string name="live_display_night">Noc</string>
+    <string name="live_display_night_summary">Používať iba nastavenia pre noc</string>
+    <string name="live_display_outdoor">Vonku (slnečno)</string>
+    <string name="live_display_outdoor_summary">Používať len nastavenia pre vonkajšie prostredie</string>
+    <string name="live_display_hint">LiveDisplay môže pomôcť znížiť únavu očí a pomôže vám spať v noci. Ťuknite sem a vyskúšajte túto funkciu!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay vyp.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatický režim.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: denný režim.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: nočný režim.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: režim vonku.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay vypnutý.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay bol zmenený na automatický režim.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay bol zmenený na denný režim.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay bol zmenený na nočný režim.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay bol zmenený na režim vonku.</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Ovládanie nabíjania</string>
+    <string name="charging_control_notification_title">Ovládanie nabíjania</string>
+    <string name="charging_control_notification_cancel_once">Zrušiť</string>
+    <string name="charging_control_notification_content_limit">Batéria bude nabitá na %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Batéria je nabitá na %1$d%%</string>
+    <string name="charging_control_notification_content_target">Batéria bude plne nabitá o %1$s</string>
+    <string name="charging_control_notification_content_target_reached">Batéria plne nabitá</string>
+    <!-- Cycle through ringer modes -->
+    <string name="volume_dialog_ringer_guidance_normal">Hovory a upozornenia budú zvoniť</string>
+    <!-- Alert slider proc nodes paths. -->
+    <string name="alert_slider_state_path"></string>
+    <string name="alert_slider_uevent_match_path"></string>
+    <!-- Lock gesture -->
+    <string name="gesture_locked_warning">Prejdite prstom znova pre odomknutie gest</string>
+</resources>

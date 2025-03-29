@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_title">Recovery</string>
+    <string name="reboot_to_recovery_message">正在重启至 Recovery</string>
+    <string name="reboot_to_bootloader_title">Bootloader</string>
+    <string name="reboot_to_bootloader_message">正在重启至 Bootloader</string>
+    <string name="reboot_title">重新启动</string>
+    <string name="reboot_message">正在重启系统</string>
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">复制崩溃日志链接</string>
+    <string name="url_copy_success">已成功复制链接</string>
+    <string name="url_copy_failed">上传日志到 mkr/bin 时发生错误</string>
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">自动</string>
+    <string name="live_display_auto_summary">根据日出日落调节屏幕色温</string>
+    <string name="live_display_off">关闭</string>
+    <string name="live_display_off_summary">禁用所有调整</string>
+    <string name="live_display_day">日间</string>
+    <string name="live_display_day_summary">仅在日间使用设置</string>
+    <string name="live_display_night">夜间</string>
+    <string name="live_display_night_summary">仅在夜间使用设置</string>
+    <string name="live_display_outdoor">户外模式（强光）</string>
+    <string name="live_display_outdoor_summary">仅在户外使用设置</string>
+    <string name="live_display_hint">LiveDisplay 能减轻眼疲劳，并在夜间帮助您入睡。点这里试试看！</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay 已关闭。</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay：自动模式</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay：日间模式</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay：夜间模式</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay：户外模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay 已关闭</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay 已切换为自动模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay 已切换为日间模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay 已切换为夜间模式</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay 已切换为户外模式</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">充电控制</string>
+    <string name="charging_control_notification_title">充电控制</string>
+    <string name="charging_control_notification_cancel_once">取消</string>
+    <string name="charging_control_notification_content_limit">电池将会被充电至 %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">电池已充电至 %1$d%%</string>
+    <string name="charging_control_notification_content_target">电池将在 %1$s 完全充满</string>
+    <string name="charging_control_notification_content_target_reached">电池已充满</string>
+    <!-- Cycle through ringer modes -->
+    <string name="volume_dialog_ringer_guidance_normal">来电或有通知时响铃</string>
+    <!-- Alert slider proc nodes paths. -->
+    <string name="alert_slider_state_path"></string>
+    <string name="alert_slider_uevent_match_path"></string>
+    <!-- Lock gesture -->
+    <string name="gesture_locked_warning">再次滑动以解锁手势</string>
+</resources>

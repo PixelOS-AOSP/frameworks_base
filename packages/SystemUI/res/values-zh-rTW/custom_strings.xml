@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">按住 &amp; 移動或是點擊增加快速設定選項</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">自動調整亮度</string>
+    <!-- Caffeine tile -->
+    <string name="quick_settings_caffeine_label">螢幕常亮</string>
+    <string name="accessibility_quick_settings_caffeine_off">螢幕常亮 關閉</string>
+    <string name="accessibility_quick_settings_caffeine_on">螢幕常亮 開啟</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">切換行動數據使用的 SIM 卡</string>
+    <string name="qs_data_switch_toast_0">目前未插入 SIM 卡</string>
+    <string name="qs_data_switch_toast_1">目前僅插入一張 SIM 卡</string>
+    <string name="qs_data_switch_text_1">SIM 卡 1</string>
+    <string name="qs_data_switch_text_2">SIM 卡 2</string>
+    <string name="qs_data_switch_changed_1">將行動數據切換至 SIM 卡 1。</string>
+    <string name="qs_data_switch_changed_2">將行動數據切換至 SIM 卡 2。</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">浮動通知</string>
+    <string name="accessibility_quick_settings_heads_up_off">浮動通知關閉。</string>
+    <string name="accessibility_quick_settings_heads_up_on">浮動通知開啟。</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">隨顯螢幕</string>
+    <string name="quick_settings_aod_off_powersave_label">關閉隨顯螢幕\n省電模式</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB 網路共用</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">無線電力分享</string>
+    <string name="quick_settings_powershare_off_powersave_label">無線電力分享關閉\n省電模式</string>
+    <string name="quick_settings_powershare_off_low_battery_label">關閉無線電力分享\n電量過低</string>
+    <string name="quick_settings_powershare_enabled_label">無線電力分享已啟用</string>
+    <!-- Status bar -->
+    <string name="status_bar_icons_title">狀態列圖示</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">漫游指示器</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">數據節省模式</string>
+    <!-- Text while recognizing face -->
+    <string name="face_unlock_recognizing">臉部辨識中...</string>
+    <!-- Screenshot chip -->
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">刪除</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">刪除螢幕截圖</string>
+    <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">進階選項</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">系統使用者介面</string>
+    <!-- Whether to briefly keep the display in ON state when transitioning from
+         DOZE_AOD_PAUSED to DOZE_AOD state. -->
+</resources>

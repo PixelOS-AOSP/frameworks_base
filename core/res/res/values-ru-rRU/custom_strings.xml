@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Advanced reboot -->
+    <string name="reboot_to_recovery_title">Режим восстановления</string>
+    <string name="reboot_to_recovery_message">Перезагрузка в режим восстановления</string>
+    <string name="reboot_to_bootloader_title">Режим загрузчика</string>
+    <string name="reboot_to_bootloader_message">Перезагрузка в режим загрузчика</string>
+    <string name="reboot_title">Перезапустить</string>
+    <string name="reboot_message">Перезагрузка</string>
+    <!-- Button that copies the url to the log of a crashed application -->
+    <string name="aerr_copy">Скопировать ссылку лога ошибки</string>
+    <string name="url_copy_success">Ссылка скопирована в буфер обмена</string>
+    <string name="url_copy_failed">Произошла ошибка при загрузке лога в mkr/bin</string>
+    <!-- LiveDisplay strings -->
+    <string name="live_display_auto">Автоматический режим</string>
+    <string name="live_display_auto_summary">Автоматически регулировать цветовую температуру экрана после захода и восхода солнца</string>
+    <string name="live_display_off">Выкл.</string>
+    <string name="live_display_off_summary">Отключить все надстройки</string>
+    <string name="live_display_day">Дневной режим</string>
+    <string name="live_display_day_summary">Использовать только настройки дневного режима</string>
+    <string name="live_display_night">Ночной режим</string>
+    <string name="live_display_night_summary">Использовать только настройки ночного режима</string>
+    <string name="live_display_outdoor">Наружный режим (на ярком солнце)</string>
+    <string name="live_display_outdoor_summary">Использовать только настройки наружного режима</string>
+    <string name="live_display_hint">LiveDisplay поможет снизить напряжение глаз и поможет вам спать по ночам. Нажмите здесь, чтобы попробовать!</string>
+    <string name="accessibility_quick_settings_live_display_off">LiveDisplay откл.</string>
+    <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: автоматический режим.</string>
+    <string name="accessibility_quick_settings_live_display_day">LiveDisplay: дневной режим.</string>
+    <string name="accessibility_quick_settings_live_display_night">LiveDisplay: ночной режим.</string>
+    <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: наружный режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay выкл.</string>
+    <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay перекл. в автоматический режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay перекл. в дневной режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay перекл. в ночной режим.</string>
+    <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay перекл. в наружный режим.</string>
+    <!-- Health interface -->
+    <string name="charging_control_notification_channel">Управление зарядкой</string>
+    <string name="charging_control_notification_title">Управление зарядкой</string>
+    <string name="charging_control_notification_cancel_once">Отмена</string>
+    <string name="charging_control_notification_content_limit">Батарея будет заряжена до %1$d%%</string>
+    <string name="charging_control_notification_content_limit_reached">Батарея заряжена до %1$d%%</string>
+    <string name="charging_control_notification_content_target">Батарея будет полностью заряжена к %1$s</string>
+    <string name="charging_control_notification_content_target_reached">Батарея заряжена</string>
+    <!-- Cycle through ringer modes -->
+    <string name="volume_dialog_ringer_guidance_normal">Звонки и уведомления будут звучать</string>
+    <!-- Alert slider proc nodes paths. -->
+    <string name="alert_slider_state_path"></string>
+    <string name="alert_slider_uevent_match_path"></string>
+    <!-- Lock gesture -->
+    <string name="gesture_locked_warning">Проведите еще раз, чтобы разблокировать жесты</string>
+</resources>

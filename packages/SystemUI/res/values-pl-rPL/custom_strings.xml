@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">Przytrzymaj i przeciągnij lub dotknij, aby dodać kafelki</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">Automatyczna jasność</string>
+    <!-- Caffeine tile -->
+    <string name="quick_settings_caffeine_label">Kofeina</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofeina wyłączona</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofeina włączona</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">Przełącz kartę do transmisji danych</string>
+    <string name="qs_data_switch_toast_0">Obecnie żadna karta SIM nie jest włożona</string>
+    <string name="qs_data_switch_toast_1">Obecnie tylko jedna karta SIM jest włożona</string>
+    <string name="qs_data_switch_text_1">SIM 1</string>
+    <string name="qs_data_switch_text_2">SIM 2</string>
+    <string name="qs_data_switch_changed_1">Przełączono kartę do transmisji danych na SIM 1.</string>
+    <string name="qs_data_switch_changed_2">Przełączono kartę do transmisji danych na SIM 2.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Wyskakujące powiadomienia</string>
+    <string name="accessibility_quick_settings_heads_up_off">Wył. wyskakujące powiadomienia</string>
+    <string name="accessibility_quick_settings_heads_up_on">Wł. wyskakujące powiadomienia.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">Tryb Always-On-Display</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD wyłączone, Oszczędzanie baterii</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">Udostępnianie internetu przez USB</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">Ładowanie bezprzewodowe PowerShare</string>
+    <string name="quick_settings_powershare_off_powersave_label">Bezprzewodowe PowerShare wyłączone, Oszczędzanie baterii</string>
+    <string name="quick_settings_powershare_off_low_battery_label">Ładowanie zwrotne PowerShare wyłączone, Naładuj baterię</string>
+    <string name="quick_settings_powershare_enabled_label">Bezprzewodowe ładowanie PowerShare jest włączone</string>
+    <!-- Status bar -->
+    <string name="status_bar_icons_title">Ikony paska stanu</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">Ikona roamingu</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">Oszczędzanie danych</string>
+    <!-- Text while recognizing face -->
+    <string name="face_unlock_recognizing">Rozpoznawanie twarzy...</string>
+    <!-- Screenshot chip -->
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Usuń</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Usuń zrzut ekranu</string>
+    <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">Zaawansowane</string>
+    <string name="global_action_restart_recovery">Tryb odzyskiwania</string>
+    <string name="global_action_restart_bootloader">Restart do trybu bootloader\'a</string>
+    <string name="global_action_restart_ui">Zrestartuj Interfejs systemu</string>
+    <!-- Whether to briefly keep the display in ON state when transitioning from
+         DOZE_AOD_PAUSED to DOZE_AOD state. -->
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">اضغط ضغطة طويلة &amp; أسحب أو أنقر لإضافة بلاطات</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">السطوع التلقائي</string>
+    <!-- Caffeine tile -->
+    <string name="quick_settings_caffeine_label">وضع الكافيين</string>
+    <string name="accessibility_quick_settings_caffeine_off">وضع الكافيين معطل</string>
+    <string name="accessibility_quick_settings_caffeine_on">وضع الكافيين مفعل</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">تبديل بطاقة البيانات</string>
+    <string name="qs_data_switch_toast_0">لا توجد بطاقة SIM حاليا</string>
+    <string name="qs_data_switch_toast_1">يوجد حالياً شريحة SIM واحدة</string>
+    <string name="qs_data_switch_text_1">SIM 1</string>
+    <string name="qs_data_switch_text_2">SIM 2</string>
+    <string name="qs_data_switch_changed_1">تم تبديل بطاقة البيانات إلى بطاقة SIM 1.</string>
+    <string name="qs_data_switch_changed_2">تم تبديل بطاقة البيانات إلى شريحة SIM 2.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">التنبيهات العلوية</string>
+    <string name="accessibility_quick_settings_heads_up_off">ايقاف التنبيهات العلوية.</string>
+    <string name="accessibility_quick_settings_heads_up_on">تشغيل التنبيهات العلوية.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">شاشة العرض الدائمة</string>
+    <string name="quick_settings_aod_off_powersave_label">إيقاف شاشة العرض الدائمة\nوضع توفير البطارية</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">‏ربط USB</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">مشاركة الشحن لاسلكياً</string>
+    <string name="quick_settings_powershare_off_powersave_label">إيقاف مشاركة الطاقة اللاسلكية\nتوفير البطارية</string>
+    <string name="quick_settings_powershare_off_low_battery_label">مشاركة الطاقة اللاسلكية معطل\nالبطارية منخفضة جدا</string>
+    <string name="quick_settings_powershare_enabled_label">تم تمكين مشاركة الطاقة اللاسلكية</string>
+    <!-- Status bar -->
+    <string name="status_bar_icons_title">أيقونات شريط الحالة</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">مؤشر التجوال</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">توفير البيانات</string>
+    <!-- Text while recognizing face -->
+    <string name="face_unlock_recognizing">يتم التعرف على الوجه...</string>
+    <!-- Screenshot chip -->
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">حذف</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">حذف لقطة الشاشة</string>
+    <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">خيارات متقدمة</string>
+    <string name="global_action_restart_recovery">الاسترداد</string>
+    <string name="global_action_restart_bootloader">أداة تحميل التشغيل</string>
+    <string name="global_action_restart_ui">واجهة المستخدم</string>
+    <!-- Whether to briefly keep the display in ON state when transitioning from
+         DOZE_AOD_PAUSED to DOZE_AOD state. -->
+</resources>

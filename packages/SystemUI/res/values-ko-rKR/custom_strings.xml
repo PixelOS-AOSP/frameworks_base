@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2024 PixelOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">타일을 추가하려면 드래그하거나 탭하세요</string>
+    <!-- Autobrightness tile -->
+    <string name="quick_settings_autobrightness_label">자동 밝기</string>
+    <!-- Caffeine tile -->
+    <string name="quick_settings_caffeine_label">화면 계속 켜기</string>
+    <string name="accessibility_quick_settings_caffeine_off">화면 계속 켜기 꺼짐</string>
+    <string name="accessibility_quick_settings_caffeine_on">화면 계속 켜기 켜짐</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">데이터 전용 SIM 카드 전환</string>
+    <string name="qs_data_switch_toast_0">현재 SIM 카드가 삽입되어 있지 않습니다.</string>
+    <string name="qs_data_switch_toast_1">현재 하나의 SIM 카드만 삽입되어 있습니다.</string>
+    <string name="qs_data_switch_text_1">SIM 1</string>
+    <string name="qs_data_switch_text_2">SIM 2</string>
+    <string name="qs_data_switch_changed_1">데이터 전용 SIM 카드를 SIM 1로 전환</string>
+    <string name="qs_data_switch_changed_2">데이터 전용 SIM 카드를 SIM 2로 전환</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">화면 상단 알림</string>
+    <string name="accessibility_quick_settings_heads_up_off">화면 상단 알림 꺼짐</string>
+    <string name="accessibility_quick_settings_heads_up_on">화면 상단 알림 켜짐</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">Always On Display</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD 꺼짐\n절전 모드</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB 테더링</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">무선 배터리 공유</string>
+    <string name="quick_settings_powershare_off_powersave_label">무선 배터리 공유 꺼짐 \n배터리 절약 모드</string>
+    <string name="quick_settings_powershare_off_low_battery_label">무선 배터리 공유 꺼짐\n 배터리가 부족합니다</string>
+    <string name="quick_settings_powershare_enabled_label">무선 배터리 공유 켜짐</string>
+    <!-- Status bar -->
+    <string name="status_bar_icons_title">상태 표시줄 아이콘</string>
+    <!-- Name of the VPN status bar icon. -->
+    <string name="status_bar_vpn">VPN</string>
+    <!-- Name of the roaming status bar icon. -->
+    <string name="status_bar_roaming">로밍 상태 표시</string>
+    <!-- Name of the data saver status bar icon. -->
+    <string name="status_bar_data_saver">데이터 절약 모드</string>
+    <!-- Text while recognizing face -->
+    <string name="face_unlock_recognizing">얼굴 인식중...</string>
+    <!-- Screenshot chip -->
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">삭제</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">스크린샷 삭제</string>
+    <!-- Advanced Reboot -->
+    <string name="global_action_restart_advanced">고급 설정</string>
+    <string name="global_action_restart_recovery">리커버리</string>
+    <string name="global_action_restart_bootloader">부트로더</string>
+    <string name="global_action_restart_ui">시스템UI</string>
+    <!-- Whether to briefly keep the display in ON state when transitioning from
+         DOZE_AOD_PAUSED to DOZE_AOD state. -->
+</resources>
