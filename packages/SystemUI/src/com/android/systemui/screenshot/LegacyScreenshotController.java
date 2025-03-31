@@ -42,15 +42,10 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Insets;
 import android.graphics.Rect;
-import android.hardware.camera2.CameraManager;
 import android.media.AudioManager;
-import android.media.MediaActionSound;
 import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.Process;
 import android.os.RemoteException;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.os.VibrationEffect;
@@ -134,8 +129,6 @@ public class LegacyScreenshotController implements InteractiveScreenshotHandler 
     private final ScreenshotSoundController mScreenshotSoundController;
     private final AudioManager mAudioManager;
     private final Vibrator mVibrator;
-    private final CameraManager mCameraManager;
-    private int mCamsInUse = 0;
     private final PhoneWindow mWindow;
     private final Display mDisplay;
     private final ScrollCaptureExecutor mScrollCaptureExecutor;
@@ -264,9 +257,6 @@ public class LegacyScreenshotController implements InteractiveScreenshotHandler 
         // Grab system services needed for screenshot sound
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
-        mCameraManager = (CameraManager) mContext.getSystemService(Context.CAMERA_SERVICE);
-        mCameraManager.registerAvailabilityCallback(mCamCallback,
-                new Handler(Looper.getMainLooper()));
 
         mCopyBroadcastReceiver = new BroadcastReceiver() {
             @Override
@@ -807,19 +797,8 @@ public class LegacyScreenshotController implements InteractiveScreenshotHandler 
         return matchWithinTolerance;
     }
 
-    /** Injectable factory to create screenshot controller instances for a specific display. */
-    @AssistedFactory
-    public interface Factory extends InteractiveScreenshotHandler.Factory {
-        /**
-         * Creates an instance of the controller for that specific display.
-         *
-         * @param display                 display to capture
-         */
-        LegacyScreenshotController create(Display display);
-    }
-
     private void playShutterSound() {
-       boolean playSound = readCameraSoundForced() && mCamsInUse > 0;
+       boolean playSound = false;
         switch (mAudioManager.getRingerMode()) {
             case AudioManager.RINGER_MODE_SILENT:
                 // do nothing
@@ -843,22 +822,14 @@ public class LegacyScreenshotController implements InteractiveScreenshotHandler 
         }
     }
 
-    private CameraManager.AvailabilityCallback mCamCallback =
-            new CameraManager.AvailabilityCallback() {
-        @Override
-        public void onCameraOpened(String cameraId, String packageId) {
-            mCamsInUse++;
-        }
-
-        @Override
-        public void onCameraClosed(String cameraId) {
-            mCamsInUse--;
-        }
-    };
-
-    private boolean readCameraSoundForced() {
-        return SystemProperties.getBoolean("audio.camerasound.force", false) ||
-                mContext.getResources().getBoolean(
-                        com.android.internal.R.bool.config_camera_sound_forced);
+    /** Injectable factory to create screenshot controller instances for a specific display. */
+    @AssistedFactory
+    public interface Factory extends InteractiveScreenshotHandler.Factory {
+        /**
+         * Creates an instance of the controller for that specific display.
+         *
+         * @param display                 display to capture
+         */
+        LegacyScreenshotController create(Display display);
     }
 }
