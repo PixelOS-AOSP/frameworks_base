@@ -54,6 +54,12 @@ import com.android.systemui.statusbar.pipeline.mobile.util.MobileMappingsProxy
 import com.android.systemui.statusbar.pipeline.mobile.util.MobileMappingsProxyImpl
 import com.android.systemui.statusbar.pipeline.mobile.util.SubscriptionManagerProxy
 import com.android.systemui.statusbar.pipeline.mobile.util.SubscriptionManagerProxyImpl
+import com.android.systemui.statusbar.pipeline.netspeed.data.repository.NetworkSpeedRepository
+import com.android.systemui.statusbar.pipeline.netspeed.data.repository.NetworkSpeedRepositoryImpl
+import com.android.systemui.statusbar.pipeline.netspeed.domain.interactor.NetworkSpeedInteractor
+import com.android.systemui.statusbar.pipeline.netspeed.domain.interactor.NetworkSpeedInteractorImpl
+import com.android.systemui.statusbar.pipeline.netspeed.ui.viewmodel.NetworkSpeedViewModel
+import com.android.systemui.statusbar.pipeline.netspeed.ui.viewmodel.NetworkSpeedViewModelImpl
 import com.android.systemui.statusbar.pipeline.satellite.data.DeviceBasedSatelliteRepository
 import com.android.systemui.statusbar.pipeline.satellite.data.DeviceBasedSatelliteRepositorySwitcher
 import com.android.systemui.statusbar.pipeline.satellite.data.RealDeviceBasedSatelliteRepository
@@ -170,6 +176,15 @@ abstract class StatusBarPipelineModule {
 
     @Binds
     abstract fun homeStatusBarViewBinder(impl: HomeStatusBarViewBinderImpl): HomeStatusBarViewBinder
+
+    @Binds
+    abstract fun networkSpeedRepository(impl: NetworkSpeedRepositoryImpl): NetworkSpeedRepository
+
+    @Binds
+    abstract fun networkSpeedInteractor(impl: NetworkSpeedInteractorImpl): NetworkSpeedInteractor
+
+    @Binds
+    abstract fun networkSpeedViewModel(impl: NetworkSpeedViewModelImpl): NetworkSpeedViewModel
 
     companion object {
 

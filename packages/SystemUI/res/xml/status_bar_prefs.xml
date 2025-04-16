@@ -57,6 +57,12 @@
         android:key="cameratoggle"
         android:title="@string/quick_settings_camera_label" />
 
+    <com.android.systemui.tuner.TunerSwitch
+        android:icon="@drawable/ic_statusbar_network_speed"
+        android:key="status_bar_network_speed"
+        android:title="@string/status_bar_network_speed"
+        sysui:defValue="false" />
+
     <!-- nfc -->
     <!-- tty -->
     <!-- speakerphone -->

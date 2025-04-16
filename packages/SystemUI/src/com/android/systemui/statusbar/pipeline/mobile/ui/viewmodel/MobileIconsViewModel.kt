@@ -27,6 +27,7 @@ import com.android.systemui.statusbar.pipeline.mobile.domain.interactor.MobileIc
 import com.android.systemui.statusbar.pipeline.mobile.ui.MobileViewLogger
 import com.android.systemui.statusbar.pipeline.mobile.ui.VerboseMobileViewLogger
 import com.android.systemui.statusbar.pipeline.mobile.ui.view.ModernStatusBarMobileView
+import com.android.systemui.statusbar.pipeline.netspeed.ui.viewmodel.NetworkSpeedViewModel
 import com.android.systemui.statusbar.pipeline.shared.ConnectivityConstants
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
@@ -57,6 +58,7 @@ constructor(
     private val verboseLogger: VerboseMobileViewLogger,
     private val interactor: MobileIconsInteractor,
     private val airplaneModeInteractor: AirplaneModeInteractor,
+    private val networkSpeedViewModel: NetworkSpeedViewModel,
     private val constants: ConnectivityConstants,
     @Background private val scope: CoroutineScope,
 ) {
@@ -140,6 +142,7 @@ constructor(
                 subId,
                 interactor.getMobileConnectionInteractorForSubId(subId),
                 airplaneModeInteractor,
+                networkSpeedViewModel,
                 constants,
                 vmScope,
             )
