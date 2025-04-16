@@ -26,6 +26,11 @@
         android:gravity="center_vertical"
         android:layout_marginStart="2.5sp"
     >
+        <include
+            layout="@layout/status_bar_network_speed"
+            android:layout_marginEnd="3dp"
+            android:visibility="gone"/>
+
         <FrameLayout
                 android:id="@+id/inout_container"
                 android:layout_height="@dimen/status_bar_wifi_inout_container_size"
