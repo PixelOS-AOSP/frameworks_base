@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   SPDX-FileCopyrightText: 2022-2024 Paranoid Android
+   SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Face unlock -->
+    <string name="face_unlock_recognizing">Recognizing face...</string>
+
+    <!-- Status bar -->
+    <string name="status_bar_icons_title">Status bar icons</string>
+    <string name="status_bar_hd_calling">HD calling (VoLTE/VoNR)</string>
+    <string name="status_bar_nfc">NFC</string>
+    <string name="status_bar_roaming">Roaming indicator</string>
+    <string name="status_bar_vowifi">Wi-Fi calling (VoWiFi)</string>
+    <string name="status_bar_wifi_standard">Wi-Fi standard number</string>
+    <string name="status_bar_network_speed">Internet speed</string>
+
+    <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
+    <string name="screenshot_delete_label">Delete</string>
+    <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
+    <string name="screenshot_delete_description">Delete screenshot</string>
+
+    <!-- Label for notification action to delete a screen recording file [CHAR LIMIT=35] -->
+    <string name="screenrecord_delete_label">Delete</string>
+    <!-- A toast message shown after successfully deleting a screen recording [CHAR LIMIT=NONE] -->
+    <string name="screenrecord_delete_description">Screen recording deleted</string>
+
+    <!-- Ringer QS tile -->
+    <string name="qs_tile_ringer_mode_label">Ringer mode</string>
+
+    <!-- USB function dialog - copied from Settings -->
+    <string name="usb_use_charging_only">No data transfer</string>
+    <string name="usb_use_file_transfers">File Transfer</string>
+    <string name="usb_use_photo_transfers">PTP</string>
+    <string name="usb_use_uvc_webcam">Webcam</string>
+    <string name="usb_use_tethering">USB tethering</string>
+    <string name="usb_use_MIDI">MIDI</string>
+    <string name="usb_use">Use USB for</string>
+
+</resources>

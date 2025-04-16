@@ -28,6 +28,11 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
+        <include
+            layout="@layout/status_bar_network_speed"
+            android:layout_marginStart="2.5dp"
+            android:visibility="gone"/>
+
         <FrameLayout
             android:id="@+id/inout_container"
             android:layout_height="@dimen/status_bar_mobile_inout_container_size"
