@@ -3078,8 +3078,8 @@ public final class InputMethodManagerService implements IInputMethodManagerImpl.
         if (!mLineageHardware.isSupported(LineageHardwareManager.FEATURE_HIGH_TOUCH_POLLING_RATE)) {
             return;
         }
-        final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.HIGH_TOUCH_POLLING_RATE_ENABLE, 0) == 1;
+        final boolean enabled = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.HIGH_TOUCH_POLLING_RATE_ENABLE, 0, mCurrentImeUserId) == 1;
         mLineageHardware.set(LineageHardwareManager.FEATURE_HIGH_TOUCH_POLLING_RATE, enabled);
     }
 
