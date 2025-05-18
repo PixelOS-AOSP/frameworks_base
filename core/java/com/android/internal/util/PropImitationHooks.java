@@ -66,7 +66,6 @@ public class PropImitationHooks {
     private static final String PACKAGE_LIVEWALLPAPER = "com.google.pixel.livewallpaper";
 
     private static final String PACKAGE_SUBSCRIPTION_RED = "com.google.android.apps.subscriptions.red";
-    private static final String PACKAGE_VELVET = "com.google.android.googlequicksearchbox";
     private static final String PACKAGE_WALLPAPER = "com.google.android.apps.wallpaper";
     private static final String PACKAGE_WALLPAPEREFFECTS = "com.google.android.wallpaper.effects";
     private static final String PACKAGE_WEATHER = "com.google.android.apps.weather";
@@ -201,7 +200,7 @@ public class PropImitationHooks {
 
         /* Set certified properties for GMSCore
          * Set stock fingerprint for ARCore
-         * Set Pixel 8 Pro for Google, ASI and GMS device configurator
+         * Set Pixel 9 Pro for GMS device configurator
          * Set Pixel XL for Google Photos
          * Set custom model for Netflix
          */
@@ -240,7 +239,6 @@ public class PropImitationHooks {
             case PACKAGE_PIXELTHEMES:
             case PACKAGE_PIXELWALLPAPER:
             case PACKAGE_SUBSCRIPTION_RED:
-            case PACKAGE_VELVET:
             case PACKAGE_WALLPAPER:
             case PACKAGE_WALLPAPEREFFECTS:
             case PACKAGE_WEATHER:
