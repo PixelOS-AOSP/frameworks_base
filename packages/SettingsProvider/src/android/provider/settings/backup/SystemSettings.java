@@ -120,9 +120,7 @@ public class SystemSettings {
                 Settings.System.NOTIFICATION_COOLDOWN_ENABLED,
                 Settings.System.NOTIFICATION_COOLDOWN_ALL,
                 Settings.System.NOTIFICATION_COOLDOWN_VIBRATE_UNLOCKED,
-                Settings.System.PREFERRED_REGION,
-                Settings.System.NETWORK_TRAFFIC_STATE,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD
+                Settings.System.PREFERRED_REGION
         ));
         if (Flags.backUpSmoothDisplayAndForcePeakRefreshRate()) {
             settings.add(Settings.System.PEAK_REFRESH_RATE);
